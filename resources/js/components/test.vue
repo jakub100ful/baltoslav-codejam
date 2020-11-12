@@ -29,9 +29,28 @@
                         this.nums.push(element.total);
                     });
 
+                    
+                    
+
                     this.data.forEach(element => {
                         this.lables.push(element.employeeCount);
                     });
+
+                    this.lables = [
+                        "Self Employed",
+                        "26-100",
+                        "100-500",
+                        "500-1000",
+                        "more than 1000",
+                    ];
+
+                    this.nums = [
+                        this.data[0].total,
+                        this.data[2].total,
+                        this.data[1].total,
+                        this.data[3].total,
+                        this.data[4].total,
+                    ]
                     this.renderC();
 
 
