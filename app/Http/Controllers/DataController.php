@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Data;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DataController extends Controller
 {
@@ -12,6 +13,9 @@ class DataController extends Controller
     }
 
     public function getPop (){
-        return Data::groupBy('employeeCount')->pluck('employeeCount');
+        return DB::table('Raw_Survey_Data')
+                 ->select('employeeCount', DB::raw('count(*) as total'))
+                 ->groupBy('employeeCount')
+                 ->get();
     }
 }

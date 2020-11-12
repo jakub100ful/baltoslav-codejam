@@ -1941,7 +1941,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
 /* harmony import */ var _card_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./card.vue */ "./resources/js/components/card.vue");
 /* harmony import */ var _navbar_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./navbar.vue */ "./resources/js/components/navbar.vue");
 //
@@ -2077,7 +2077,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getData: function getData() {
-      axios.get('/test/data').then(function (rsp) {
+      axios.get('/data/pop').then(function (rsp) {
         console.log(rsp.data);
       });
     }

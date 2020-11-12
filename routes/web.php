@@ -24,4 +24,5 @@ Route::get('/test', function () {
 });
 
 Route::get('/test/data', [DataController::class, 'test']);
+Route::get('/data/pop', [DataController::class, 'getPop']);
 

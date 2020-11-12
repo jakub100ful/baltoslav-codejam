@@ -17,7 +17,7 @@
 
         methods:{
             getData(){
-                    axios.get('/test/data').then(rsp=>{
+                    axios.get('/data/pop').then(rsp=>{
                     console.log(rsp.data);
 
                 })
