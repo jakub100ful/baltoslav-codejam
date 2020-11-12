@@ -1960,6 +1960,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -1986,6 +1990,13 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('/data/pop').then(function (rsp) {
         _this.data = rsp.data;
       });
+    }
+  },
+  computed: {
+    myStyles: function myStyles() {
+      return {
+        height: '99px'
+      };
     }
   }
 });
@@ -2153,12 +2164,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_chartjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-chartjs */ "./node_modules/vue-chartjs/es/index.js");
+/* harmony import */ var vue_chartjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-chartjs */ "./node_modules/vue-chartjs/es/index.js");
 //
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  "extends": vue_chartjs__WEBPACK_IMPORTED_MODULE_0__["Bar"],
+  "extends": vue_chartjs__WEBPACK_IMPORTED_MODULE_1__["Bar"],
   data: function data() {
     return {
       data: null,
@@ -106870,7 +106881,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "container-fluid" }, [
     _c("div", [_c("navbar")], 1),
     _vm._v(" "),
     _c(
@@ -106884,26 +106895,16 @@ var render = function() {
             bodyContent:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquet ultrices malesuada. Aliquam aliquam, lacus at elementum tristique, dui erat posuere leo, at molestie ante ex et ante. Ut fermentum, odio ut feugiat consequat, felis ligula cursus neque, ac porta mi risus nec sem. Pellentesque cursus tempor justo. Proin porta interdum metus vitae molestie. Aenean euismod molestie est in faucibus. Aliquam id neque consequat, elementum orci vitae, volutpat sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque at tincidunt dolor, ac auctor massa. Integer quis lectus tempor, feugiat neque non, cursus nulla. Aliquam tincidunt faucibus lorem, eget sagittis turpis luctus non. Proin in fermentum mi. Nulla facilisi. Vestibulum vitae arcu augue. Proin magna tellus, commodo eget vulputate commodo, tempor eu orci."
           }
-        }),
-        _vm._v(" "),
-        _c("card", {
-          staticClass: "col-sm",
-          attrs: {
-            headerText: "Mental Health",
-            bodyContent:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquet ultrices malesuada. Aliquam aliquam, lacus at elementum tristique, dui erat posuere leo, at molestie ante ex et ante. Ut fermentum, odio ut feugiat consequat, felis ligula cursus neque, ac porta mi risus nec sem. Pellentesque cursus tempor justo. Proin porta interdum metus vitae molestie. Aenean euismod molestie est in faucibus. Aliquam id neque consequat, elementum orci vitae, volutpat sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque at tincidunt dolor, ac auctor massa. Integer quis lectus tempor, feugiat neque non, cursus nulla. Aliquam tincidunt faucibus lorem, eget sagittis turpis luctus non. Proin in fermentum mi. Nulla facilisi. Vestibulum vitae arcu augue. Proin magna tellus, commodo eget vulputate commodo, tempor eu orci."
-          }
-        }),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-sm" },
-          [_c("graph", { attrs: { data: _vm.data } })],
-          1
-        )
+        })
       ],
       1
-    )
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-sm" }, [
+        _c("div", { staticClass: "card" }, [_c("test")], 1)
+      ])
+    ])
   ])
 }
 var staticRenderFns = []
@@ -106931,9 +106932,9 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md" }, [
-        _c("div", { staticClass: "card bg-dark" }, [
-          _c("div", { staticClass: "card-header" }, [
-            _c("h1", { staticClass: "text-light" }, [
+        _c("div", { staticClass: "card bg-light" }, [
+          _c("div", { staticClass: "card-header bg-info" }, [
+            _c("h1", { staticClass: "text-light text-center" }, [
               _vm._v(
                 "\n                        " +
                   _vm._s(_vm.headerText) +
@@ -107001,8 +107002,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", { staticClass: "navbar navbar-dark bg-dark" }, [
-      _c("span", { staticClass: "navbar-brand mb-0 h1" }, [_vm._v("Navbar")])
+    return _c("nav", { staticClass: "navbar navbar-light bg-primary m-0" }, [
+      _c("span", { staticClass: "navbar-brand mb-0 h1 text-light" }, [
+        _c("strong", [_vm._v("Navbar")])
+      ])
     ])
   }
 ]

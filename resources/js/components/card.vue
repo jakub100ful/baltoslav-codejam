@@ -2,9 +2,9 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md">
-                <div class="card bg-dark">
-                    <div class="card-header">
-                        <h1 class="text-light">
+                <div class="card bg-light">
+                    <div class="card-header bg-info">
+                        <h1 class="text-light text-center">
                             {{headerText}}
                         </h1>
                     </div>

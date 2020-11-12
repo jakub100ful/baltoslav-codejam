@@ -1,8 +1,8 @@
 
 
 <template>
-    <nav class="navbar navbar-dark bg-dark">
-        <span class="navbar-brand mb-0 h1">Navbar</span>
+    <nav class="navbar navbar-light bg-primary m-0">
+        <span class="navbar-brand mb-0 h1 text-light"><strong>Navbar</strong></span>
     </nav>
 </template>
 
