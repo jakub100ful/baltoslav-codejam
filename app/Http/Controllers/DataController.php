@@ -9,7 +9,9 @@ class DataController extends Controller
 {
     public function test (){
         return Data::get();
-        
+    }
 
+    public function getPop (){
+        return Data::groupBy('employeeCount')->pluck('employeeCount');
     }
 }
