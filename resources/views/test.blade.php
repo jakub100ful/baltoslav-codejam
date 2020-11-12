@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-        <link href="{{asset('js/sass/ap.scss')}}" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -18,7 +18,7 @@
     </head>
     <body>  
         <div id="app">
-                <test style="width: 20px, height: 20px,"> </test>
+                <outertest/>
         </div>
     </body>
 </html>

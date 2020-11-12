@@ -24,6 +24,7 @@ Vue.component('test', require('./components/test.vue').default);
 Vue.component('app', require('./components/app.vue').default);
 Vue.component('card', require('./components/card.vue').default);
 Vue.component('navbar', require('./components/navbar.vue').default);
+Vue.component('outertest', require('./components/outertest.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
