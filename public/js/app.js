@@ -2044,6 +2044,90 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/charts/illnesstypes.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/charts/illnesstypes.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_chartjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-chartjs */ "./node_modules/vue-chartjs/es/index.js");
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  "extends": vue_chartjs__WEBPACK_IMPORTED_MODULE_0__["HorizontalBar"],
+  data: function data() {
+    return {
+      data: null,
+      nums: [],
+      lables: [],
+      options: {
+        tooltips: {},
+        legend: {
+          labels: {
+            // This more specific font property overrides the global property
+            fontColor: 'black'
+          }
+        }
+      }
+    };
+  },
+  props: {
+    styles: {
+      "color": "red"
+    }
+  },
+  methods: {
+    getData: function getData() {
+      var _this = this;
+
+      axios.get('/data/illtypes').then(function (rsp) {
+        console.log(rsp.data);
+        _this.data = rsp.data;
+
+        _this.data.forEach(function (element) {
+          _this.nums.push(element.total);
+        });
+
+        _this.data.forEach(function (element) {
+          _this.lables.push(Object.keys(element));
+        });
+
+        _this.lables = ["Anxiety Disorder (Generalized Social Phobia etc)", "Mood Disorder (Depression Bipolar Disorder etc)", "Psychotic Disorder (Schizophrenia Schizoaffective etc)", "Eating Disorder (Anorexia Bulimia etc)", "Attention Deficit Hyperactivity Disorder", "Obsessive-Compulsive Disorder", "Post-traumatic Stress Disorder", "Stress Response Syndromes", "Dissociative Disorder", "Substance Use Disorder", "Addictive Disorder"];
+
+        _this.renderC();
+      });
+    },
+    renderC: function renderC() {
+      var d = {
+        labels: this.lables,
+        lineTension: 5,
+        borderWidth: 100,
+        borderColor: '#F2A727',
+        pointBackgroundColor: '#F2A727',
+        backgroundColor: 'transparent',
+        datasets: [{
+          data: this.nums,
+          label: "Different types of illness",
+          backgroundColor: ["#5c53c6", "#59dafb", "#510013", "#aa7bff", "#e8597c", "#0054c9", "#ff85ee", "#2a1b4d", "#9da4ff", "#676b9e", "#676b9e"],
+          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)']
+        }]
+      };
+      console.log('Component render.');
+      this.renderChart(d, this.options);
+    }
+  },
+  mounted: function mounted() {
+    this.getData();
+    console.log('Component mounted.');
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/graph.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/graph.vue?vue&type=script&lang=js& ***!
@@ -119353,6 +119437,7 @@ Vue.component('app', __webpack_require__(/*! ./components/app.vue */ "./resource
 Vue.component('card', __webpack_require__(/*! ./components/card.vue */ "./resources/js/components/card.vue")["default"]);
 Vue.component('navbar', __webpack_require__(/*! ./components/navbar.vue */ "./resources/js/components/navbar.vue")["default"]);
 Vue.component('outertest', __webpack_require__(/*! ./components/outertest.vue */ "./resources/js/components/outertest.vue")["default"]);
+Vue.component('illnesstypes', __webpack_require__(/*! ./components/charts/illnesstypes.vue */ "./resources/js/components/charts/illnesstypes.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -119614,6 +119699,56 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_card_vue_vue_type_template_id_c170f44a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/components/charts/illnesstypes.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/charts/illnesstypes.vue ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _illnesstypes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./illnesstypes.vue?vue&type=script&lang=js& */ "./resources/js/components/charts/illnesstypes.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  _illnesstypes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"],
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/charts/illnesstypes.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/charts/illnesstypes.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/charts/illnesstypes.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_illnesstypes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./illnesstypes.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/charts/illnesstypes.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_illnesstypes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 

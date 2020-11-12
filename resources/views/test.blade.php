@@ -18,7 +18,7 @@
     </head>
     <body>  
         <div id="app">
-                <outertest/>
+                <illnesstypes/>
         </div>
     </body>
 </html>
