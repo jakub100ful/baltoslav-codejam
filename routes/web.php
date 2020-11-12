@@ -25,4 +25,6 @@ Route::get('/test', function () {
 
 Route::get('/test/data', [DataController::class, 'test']);
 Route::get('/data/pop', [DataController::class, 'getPop']);
+Route::get('/data/ill', [DataController::class, 'illAmmount']);
+Route::get('/data/illtypes', [DataController::class, 'illtypes']);
 
