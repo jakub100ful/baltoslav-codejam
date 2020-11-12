@@ -1941,7 +1941,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
 /* harmony import */ var _card_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./card.vue */ "./resources/js/components/card.vue");
 /* harmony import */ var _navbar_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./navbar.vue */ "./resources/js/components/navbar.vue");
 //
@@ -2079,7 +2079,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getData: function getData() {
-      axios.get('/test/data').then(function (rsp) {
+      axios.get('/data/pop').then(function (rsp) {
         console.log(rsp.data);
       });
     }
@@ -81476,8 +81476,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\baltoslav-codejam\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\baltoslav-codejam\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\public_html\baltoslav-codejam\baltoslav\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\public_html\baltoslav-codejam\baltoslav\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
