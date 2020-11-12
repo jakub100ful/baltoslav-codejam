@@ -14,6 +14,12 @@
                 nums : [],
                 lables: [],
 
+                options:{
+                   tooltips:{
+                        enabled: false,
+                   }
+                }
+
 
 
             }
@@ -37,7 +43,9 @@
                     });
 
                     this.lables = [
-                        "Self Employed",
+                        "Self Employed", 
+                        "1-5",
+                        "6-25",
                         "26-100",
                         "100-500",
                         "500-1000",
@@ -46,10 +54,12 @@
 
                     this.nums = [
                         this.data[0].total,
-                        this.data[2].total,
                         this.data[1].total,
                         this.data[3].total,
+                        this.data[5].total,
+                        this.data[2].total,
                         this.data[4].total,
+                        this.data[6].total,
                     ]
                     this.renderC();
 
@@ -90,7 +100,8 @@
                 }
 
                 console.log('Component render.')
-                this.renderChart(d);
+                
+                this.renderChart(d,this.options);
 
             }
 

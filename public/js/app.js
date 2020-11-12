@@ -2239,7 +2239,12 @@ __webpack_require__.r(__webpack_exports__);
     return {
       data: null,
       nums: [],
-      lables: []
+      lables: [],
+      options: {
+        tooltips: {
+          enabled: false
+        }
+      }
     };
   },
   methods: {
@@ -2258,8 +2263,8 @@ __webpack_require__.r(__webpack_exports__);
           _this.lables.push(element.employeeCount);
         });
 
-        _this.lables = ["Self Employed", "26-100", "100-500", "500-1000", "more than 1000"];
-        _this.nums = [_this.data[0].total, _this.data[2].total, _this.data[1].total, _this.data[3].total, _this.data[4].total];
+        _this.lables = ["Self Employed", "1-5", "6-25", "26-100", "100-500", "500-1000", "more than 1000"];
+        _this.nums = [_this.data[0].total, _this.data[1].total, _this.data[3].total, _this.data[5].total, _this.data[2].total, _this.data[4].total, _this.data[6].total];
 
         _this.renderC();
       });
@@ -2280,7 +2285,7 @@ __webpack_require__.r(__webpack_exports__);
         }]
       };
       console.log('Component render.');
-      this.renderChart(d);
+      this.renderChart(d, this.options);
     }
   },
   mounted: function mounted() {
@@ -119887,8 +119892,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\baltoslav-codejam\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\baltoslav-codejam\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\public_html\baltoslav-codejam\baltoslav\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\public_html\baltoslav-codejam\baltoslav\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
