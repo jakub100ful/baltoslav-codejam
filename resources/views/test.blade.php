@@ -18,7 +18,7 @@
     </head>
     <body>  
         <div id="app">
-                <app> </app>
+                <test> </test>
         </div>
     </body>
 </html>

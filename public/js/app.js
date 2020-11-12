@@ -1974,8 +1974,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {};
+  },
+  methods: {
+    getData: function getData() {
+      axios.get('/test/data').then(function (rsp) {
+        console.log(rsp.data);
+      });
+    }
+  },
   mounted: function mounted() {
+    this.getData();
     console.log('Component mounted.');
   }
 });
@@ -37660,7 +37672,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
-      _c("div", [_vm._v("\n        test\n    ")])
+      _c("div", [_vm._v("\n        test\n        dd\n    ")])
     ])
   }
 ]
