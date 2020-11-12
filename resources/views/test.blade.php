@@ -18,7 +18,7 @@
     </head>
     <body>  
         <div id="app">
-                <test> </test>
+                <test style="width: 20px, height: 20px,"> </test>
         </div>
     </body>
 </html>

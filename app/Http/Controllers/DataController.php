@@ -13,9 +13,17 @@ class DataController extends Controller
     }
 
     public function getPop (){
-        return DB::table('Raw_Survey_Data')
+        $d =  DB::table('Raw_Survey_Data')
                  ->select('employeeCount', DB::raw('count(*) as total'))
                  ->groupBy('employeeCount')
                  ->get();
+
+    
+
+
+        $d[0]->employeeCount = "No Answer";
+    
+        return $d;
+
     }
 }
