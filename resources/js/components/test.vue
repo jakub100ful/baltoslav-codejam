@@ -30,6 +30,7 @@
             this.getData();
 
             console.log('Component mounted.')
-        }
+        },
+        
     }
 </script>
