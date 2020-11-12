@@ -5,6 +5,22 @@ class DB {
 
     public $connection;
 
+    public $disorderDic = [
+        "hasAnxietyDisorder",
+        "hasMoodDisorder",
+        'hasPsychoticDisorder',
+        'hasEatingDisorder',
+        'hasADHD',
+        'hasPersonalityDisorder',
+        'hasOCD',
+        'hasPTSD',
+        'hasStressResponseSyndrome',
+        'hasDissociativeDisorder',
+        'hasSubstanceUseDisorder',
+        'hasAddictiveDisorder',
+        'Other',
+    ];
+
     function __construct(){
         $servername = "178.62.91.41";
         $username = "db_user";
@@ -35,15 +51,17 @@ class DB {
     }
 
     function getUsers(){
-        $sql = "SELECT * FROM `untitled_table_2` WHERE 1";
+        $sql = "SELECT `supportiveResponseToMentalHealthDescription`, count(*) FROM `Raw_Survey_Data` GROUP BY `supportiveResponseToMentalHealthDescription`";
         $result = mysqli_query($this->connection,$sql);
 
         $users = [];
 
-        while ($row = mysqli_fetch_row($result)){
+        while ($row = mysqli_fetch_assoc($result)){
            
             array_push($users,$row);
         }
+
+
 
         return $users;
 
