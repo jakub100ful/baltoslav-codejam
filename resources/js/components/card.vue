@@ -10,7 +10,7 @@
                     </div>
 
                     <div class="text-light p-3">
-                        {{bodyText}}
+                        {{bodyContent}}
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
         },
         props: {
             headerText: {},
-            bodyText: {}
+            bodyContent: {}
         }
     }
 </script>

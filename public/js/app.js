@@ -1957,6 +1957,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -1978,7 +1980,7 @@ __webpack_require__.r(__webpack_exports__);
     getData: function getData() {
       var _this = this;
 
-      axios.get('/test/data').then(function (rsp) {
+      axios.get('/data/pop').then(function (rsp) {
         _this.data = rsp.data;
       });
     }
@@ -2022,7 +2024,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     headerText: {},
-    bodyText: {}
+    bodyContent: {}
   }
 });
 
@@ -68721,7 +68723,7 @@ var render = function() {
           staticClass: "col-sm",
           attrs: {
             headerText: "Mental Health in Tech",
-            bodyText:
+            bodyContent:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquet ultrices malesuada. Aliquam aliquam, lacus at elementum tristique, dui erat posuere leo, at molestie ante ex et ante. Ut fermentum, odio ut feugiat consequat, felis ligula cursus neque, ac porta mi risus nec sem. Pellentesque cursus tempor justo. Proin porta interdum metus vitae molestie. Aenean euismod molestie est in faucibus. Aliquam id neque consequat, elementum orci vitae, volutpat sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque at tincidunt dolor, ac auctor massa. Integer quis lectus tempor, feugiat neque non, cursus nulla. Aliquam tincidunt faucibus lorem, eget sagittis turpis luctus non. Proin in fermentum mi. Nulla facilisi. Vestibulum vitae arcu augue. Proin magna tellus, commodo eget vulputate commodo, tempor eu orci."
           }
         }),
@@ -68730,15 +68732,12 @@ var render = function() {
           staticClass: "col-sm",
           attrs: {
             headerText: "Mental Health",
-            bodyText:
+            bodyContent:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquet ultrices malesuada. Aliquam aliquam, lacus at elementum tristique, dui erat posuere leo, at molestie ante ex et ante. Ut fermentum, odio ut feugiat consequat, felis ligula cursus neque, ac porta mi risus nec sem. Pellentesque cursus tempor justo. Proin porta interdum metus vitae molestie. Aenean euismod molestie est in faucibus. Aliquam id neque consequat, elementum orci vitae, volutpat sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque at tincidunt dolor, ac auctor massa. Integer quis lectus tempor, feugiat neque non, cursus nulla. Aliquam tincidunt faucibus lorem, eget sagittis turpis luctus non. Proin in fermentum mi. Nulla facilisi. Vestibulum vitae arcu augue. Proin magna tellus, commodo eget vulputate commodo, tempor eu orci."
           }
         }),
         _vm._v(" "),
-        _c("card", {
-          staticClass: "col-sm",
-          attrs: { headerText: "Gender", bodyText: _vm.data[560].gender }
-        })
+        _c("div", { staticClass: "col-sm" })
       ],
       1
     )
@@ -68783,7 +68782,7 @@ var render = function() {
           _c("div", { staticClass: "text-light p-3" }, [
             _vm._v(
               "\n                    " +
-                _vm._s(_vm.bodyText) +
+                _vm._s(_vm.bodyContent) +
                 "\n                "
             )
           ])
