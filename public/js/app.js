@@ -2018,6 +2018,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2764,7 +2789,7 @@ __webpack_require__.r(__webpack_exports__);
         datasets: [{
           data: this.nums,
           label: "Size of company the person works at",
-          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+          backgroundColor: ['rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)', 'rgba(255, 206, 86, 0.8)', 'rgba(75, 192, 192, 0.8)', 'rgba(153, 102, 255, 0.8)', 'rgba(255, 159, 64, 0.8)'],
           borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)']
         }]
       };
@@ -23397,12 +23422,13 @@ return src;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var escape = __webpack_require__(/*! ../../../node_modules/css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@200;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "\n.row-m-t[data-v-f9a0fcb4]{\r\n  margin-top : 50px\n}\n.body-container[data-v-f9a0fcb4] {\r\n    background-image: \"storage\\Apppublic\\Clouds.png\";\r\n    background-size: 100%;\n}\r\n", ""]);
+exports.push([module.i, "\n.row-m-t[data-v-f9a0fcb4]{\r\n  margin-top : 50px\n}\n.body-container[data-v-f9a0fcb4] {\r\n    background: url(" + escape(__webpack_require__(/*! ../../../storage/app/public/Clouds.png */ "./storage/app/public/Clouds.png")) + ");\r\n    background-size: 100%;\r\n    background-repeat: no-repeat;\r\n    background-attachment: fixed;\r\n    scroll-behavior: smooth;\n}\n.title-text[data-v-f9a0fcb4] {\r\n    font-family: 'Raleway', sans-serif;\r\n    font-weight: 800;\r\n    text-shadow: 2px 2px black;\n}\n.subtitle-text[data-v-f9a0fcb4] {\r\n    font-family: 'Raleway', sans-serif;\r\n    font-weight: 200;\n}\n.card-transparent[data-v-f9a0fcb4] {\r\n    background-color: rgba(245, 245, 245, 0.4);\n}\r\n", ""]);
 
 // exports
 
@@ -23491,6 +23517,33 @@ function toComment(sourceMap) {
 	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
 
 	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/lib/url/escape.js":
+/*!***************************************************!*\
+  !*** ./node_modules/css-loader/lib/url/escape.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function escape(url) {
+    if (typeof url !== 'string') {
+        return url
+    }
+    // If url is already wrapped in quotes, remove them
+    if (/^['"].*['"]$/.test(url)) {
+        url = url.slice(1, -1);
+    }
+    // Should url be wrapped?
+    // See https://drafts.csswg.org/css-values-3/#urls
+    if (/["'() \t\n]/.test(url)) {
+        return '"' + url.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
+    }
+
+    return url
 }
 
 
@@ -108086,73 +108139,83 @@ var render = function() {
   return _c("div", { staticClass: "container-fluid body-container" }, [
     _vm._m(0),
     _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row row-lg-4 d-flex flex-row justify-content-md-center" },
-      [
-        _c("div", { staticClass: "col col-lg-4" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _c("h5", [_vm._v("Demographics of the people asked")]),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  on: {
-                    click: function($event) {
-                      _vm.demographics = "pop"
-                      _vm.k += 1
+    _c("div", { staticClass: "container h-100", attrs: { id: "section-2" } }, [
+      _vm._m(1),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "row row-lg-4 d-flex flex-row justify-content-md-center"
+        },
+        [
+          _c("div", { staticClass: "col col-lg-10" }, [
+            _c("div", { staticClass: "card card-transparent" }, [
+              _c("div", { staticClass: "card-header" }, [
+                _c("h5", [_vm._v("Demographics of the people asked")]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-light",
+                    on: {
+                      click: function($event) {
+                        _vm.demographics = "pop"
+                        _vm.k += 1
+                      }
                     }
-                  }
-                },
-                [_vm._v("Population of the company")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  on: {
-                    click: function($event) {
-                      _vm.demographics = "gender"
-                      _vm.k += 1
+                  },
+                  [_vm._v("Population of the company")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-light",
+                    on: {
+                      click: function($event) {
+                        _vm.demographics = "gender"
+                        _vm.k += 1
+                      }
                     }
-                  }
-                },
-                [_vm._v("Gender")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm.demographics == "pop"
-                ? _c(
-                    "div",
-                    [
-                      _c("test", { key: _vm.k }),
-                      _vm._v(" "),
-                      _c("poppie", { key: _vm.k })
-                    ],
-                    1
-                  )
-                : _vm._e(),
+                  },
+                  [_vm._v("Gender")]
+                )
+              ]),
               _vm._v(" "),
-              _vm.demographics == "gender"
-                ? _c(
-                    "div",
-                    [
-                      _c("genderbar", { key: _vm.k }),
-                      _vm._v(" "),
-                      _c("genderpie", { key: _vm.k })
-                    ],
-                    1
-                  )
-                : _vm._e()
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "row" }, [
+                  _vm.demographics == "pop"
+                    ? _c(
+                        "div",
+                        { staticClass: "col-8" },
+                        [
+                          _c("test", { key: _vm.k }),
+                          _vm._v(" "),
+                          _c("poppie", { key: _vm.k })
+                        ],
+                        1
+                      )
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _vm.demographics == "gender"
+                  ? _c(
+                      "div",
+                      { staticClass: "col-8" },
+                      [
+                        _c("genderbar", { key: _vm.k }),
+                        _vm._v(" "),
+                        _c("genderpie", { key: _vm.k })
+                      ],
+                      1
+                    )
+                  : _vm._e()
+              ])
             ])
           ])
-        ])
-      ]
-    ),
+        ]
+      )
+    ]),
     _vm._v(" "),
     _c(
       "div",
@@ -108181,17 +108244,39 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row row-lg-4 align-items-center h-100" }, [
-      _c("div", { staticClass: "col col-lg" }, [
-        _c("h1", { staticClass: "text-center display-1" }, [
-          _vm._v("Dear Tech Companies...")
-        ]),
-        _vm._v(" "),
-        _c("h1", { staticClass: "text-center" }, [
-          _vm._v("We need to have a discussion about mental health.")
+    return _c(
+      "div",
+      {
+        staticClass: "container h-100 smooth-scroll",
+        attrs: { id: "section-1" }
+      },
+      [
+        _c("div", { staticClass: "row align-items-center min-vh-100" }, [
+          _c(
+            "div",
+            { staticClass: "col col-lg shadow-lg text-light center-block" },
+            [
+              _c("h1", { staticClass: "text-center display-1 title-text" }, [
+                _vm._v("Dear Tech Companies...")
+              ]),
+              _vm._v(" "),
+              _c("h1", { staticClass: "text-center subtitle-text" }, [
+                _vm._v("we need to have a discussion about mental health")
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-light m-3",
+                  attrs: { href: "#section-2", role: "button" }
+                },
+                [_vm._v("Start")]
+              )
+            ]
+          )
         ])
-      ])
-    ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -108201,17 +108286,13 @@ var staticRenderFns = [
       "div",
       { staticClass: "row row-lg-4 justify-content-md-center" },
       [
-        _c("div", { staticClass: "col col-lg-4" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _c("h5", [
-                _vm._v(
-                  "We looked at a survey of 1173 people who were asked about mental health issues in the tech industry"
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" })
+        _c("div", { staticClass: "col col-lg-10 m-5" }, [
+          _c("div", { staticClass: "card p-5 card-transparent" }, [
+            _c("h3", { staticClass: "text-dark subtitle-text" }, [
+              _vm._v(
+                "We looked at a survey of 1173 people who were asked about mental health issues in the tech industry"
+              )
+            ])
           ])
         ])
       ]
@@ -121416,6 +121497,17 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./storage/app/public/Clouds.png":
+/*!***************************************!*\
+  !*** ./storage/app/public/Clouds.png ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/Clouds.png?163ea25d9a85bcc001586589840d3bd8";
 
 /***/ }),
 
