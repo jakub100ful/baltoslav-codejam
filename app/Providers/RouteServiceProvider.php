@@ -72,9 +72,27 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes()
     {
-        Route::prefix('api')
-            ->middleware('api')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/api.php'));
+        Route::group([
+            'middleware' => ['api', 'cors'],
+            'namespace' => $this->namespace,
+            'prefix' => 'api',
+        ], function ($router) {
+            Route::get('/', function () {
+                return view('welcome');
+            });
+            
+            Route::get('/test', function () {
+                return view('test');
+            });
+            
+            Route::get('/test/data', [DataController::class, 'test']);
+            Route::get('/data/pop', [DataController::class, 'getPop']);
+            Route::get('/data/ill', [DataController::class, 'illAmmount']);
+            Route::get('/data/illtypes', [DataController::class, 'illtypes']);
+            Route::get('/data/gender', [DataController::class, 'gender']);
+            Route::get('/data/popcomp', [DataController::class, 'popcomp']);
+            Route::get('/data/ever', [DataController::class, 'everDisscussed']);
+            Route::get('/data/concerns', [DataController::class, 'concerns']);
+        });
     }
 }

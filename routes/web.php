@@ -15,6 +15,7 @@ use Symfony\Component\HttpKernel\DataCollector\DataCollector;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -31,4 +32,6 @@ Route::get('/data/gender', [DataController::class, 'gender']);
 Route::get('/data/popcomp', [DataController::class, 'popcomp']);
 Route::get('/data/ever', [DataController::class, 'everDisscussed']);
 Route::get('/data/concerns', [DataController::class, 'concerns']);
+
+
 
