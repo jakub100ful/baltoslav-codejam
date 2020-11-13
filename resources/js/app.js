@@ -34,6 +34,8 @@ Vue.component('havediscussedbar', require('./components/charts/havediscussedbar.
 Vue.component('havediscussedpie', require('./components/charts/havediscussedpie.vue').default);
 Vue.component('woulddiscusspie', require('./components/charts/woulddiscusspie.vue').default);
 Vue.component('woulddiscussbar', require('./components/charts/woulddiscussbar.vue').default);
+Vue.component('providesbar', require('./components/charts/providesbar.vue').default);
+Vue.component('knownbar', require('./components/charts/knownbar.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

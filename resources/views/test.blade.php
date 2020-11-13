@@ -18,7 +18,7 @@
     </head>
     <body>  
         <div id="app">
-                <woulddiscussbar/>
+                <knownbar/>
         </div>
     </body>
 </html>
