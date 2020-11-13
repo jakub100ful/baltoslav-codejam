@@ -2549,9 +2549,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PackChart",
@@ -108293,8 +108290,20 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c("h1", [_vm._v("Circle Pack in D3")]),
+      _vm._v(" "),
+      _c("h2", [_vm._v(_vm._s(_vm.msg))])
+    ])
+  ])
+}
 var staticRenderFns = []
+render._withStripped = true
 
 
 
