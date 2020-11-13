@@ -30,6 +30,8 @@ Vue.component('poppie', require('./components/charts/poppie.vue').default);
 Vue.component('genderbar', require('./components/charts/genderbar.vue').default);
 Vue.component('genderpie', require('./components/charts/genderpie.vue').default);
 Vue.component('illammount', require('./components/charts/illammount.vue').default);
+Vue.component('havediscussedbar', require('./components/charts/havediscussedbar.vue').default);
+Vue.component('havediscussedpie', require('./components/charts/havediscussedpie.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

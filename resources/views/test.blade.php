@@ -18,7 +18,7 @@
     </head>
     <body>  
         <div id="app">
-                <genderpie/>
+                <havediscussedpie/>
         </div>
     </body>
 </html>

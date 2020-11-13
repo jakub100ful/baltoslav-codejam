@@ -2268,6 +2268,138 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/charts/havediscussedbar.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/charts/havediscussedbar.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_chartjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-chartjs */ "./node_modules/vue-chartjs/es/index.js");
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  "extends": vue_chartjs__WEBPACK_IMPORTED_MODULE_0__["Bar"],
+  data: function data() {
+    return {
+      data: null,
+      nums: [],
+      lables: [],
+      options: {
+        tooltips: {}
+      }
+    };
+  },
+  methods: {
+    getData: function getData() {
+      var _this = this;
+
+      axios.get('/data/ever').then(function (rsp) {
+        console.log(rsp.data);
+        _this.data = rsp.data;
+        _this.nums = [_this.data.HaveDisscussed["Yes"], _this.data.HaveDisscussed["No"]];
+        _this.lables = ["Yes", "No"];
+
+        _this.renderC();
+      });
+    },
+    renderC: function renderC() {
+      var d = {
+        labels: this.lables,
+        lineTension: 0,
+        borderWidth: 1,
+        borderColor: '#F2A727',
+        pointBackgroundColor: '#F2A727',
+        backgroundColor: 'transparent',
+        datasets: [{
+          data: this.nums,
+          label: "Has discussed mental health with employer",
+          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)']
+        }]
+      };
+      console.log('Component render.');
+      this.renderChart(d, this.options);
+    }
+  },
+  mounted: function mounted() {
+    this.getData();
+    console.log('Component mounted.');
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/charts/havediscussedpie.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/charts/havediscussedpie.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_chartjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-chartjs */ "./node_modules/vue-chartjs/es/index.js");
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  "extends": vue_chartjs__WEBPACK_IMPORTED_MODULE_0__["Pie"],
+  data: function data() {
+    return {
+      data: null,
+      nums: [],
+      lables: [],
+      options: {
+        cutoutPercentage: 50,
+        tooltips: {}
+      }
+    };
+  },
+  methods: {
+    getData: function getData() {
+      var _this = this;
+
+      axios.get('/data/ever').then(function (rsp) {
+        console.log(rsp.data);
+        _this.data = rsp.data;
+        var total = _this.data.HaveDisscussed["Yes"] + _this.data.HaveDisscussed["No"];
+        _this.nums = [Math.round(_this.data.HaveDisscussed["Yes"] / total * 100), Math.round(_this.data.HaveDisscussed["No"] / total * 100)];
+        _this.lables = ["Yes", "No"];
+
+        _this.renderC();
+      });
+    },
+    renderC: function renderC() {
+      var d = {
+        labels: this.lables,
+        lineTension: 0,
+        borderWidth: 1,
+        borderColor: '#F2A727',
+        pointBackgroundColor: '#F2A727',
+        backgroundColor: 'transparent',
+        datasets: [{
+          data: this.nums,
+          label: "Has discussed mental health with employer",
+          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)']
+        }]
+      };
+      console.log('Component render.');
+      this.renderChart(d, this.options);
+    }
+  },
+  mounted: function mounted() {
+    this.getData();
+    console.log('Component mounted.');
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/charts/illammount.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/charts/illammount.vue?vue&type=script&lang=js& ***!
@@ -120619,6 +120751,8 @@ Vue.component('poppie', __webpack_require__(/*! ./components/charts/poppie.vue *
 Vue.component('genderbar', __webpack_require__(/*! ./components/charts/genderbar.vue */ "./resources/js/components/charts/genderbar.vue")["default"]);
 Vue.component('genderpie', __webpack_require__(/*! ./components/charts/genderpie.vue */ "./resources/js/components/charts/genderpie.vue")["default"]);
 Vue.component('illammount', __webpack_require__(/*! ./components/charts/illammount.vue */ "./resources/js/components/charts/illammount.vue")["default"]);
+Vue.component('havediscussedbar', __webpack_require__(/*! ./components/charts/havediscussedbar.vue */ "./resources/js/components/charts/havediscussedbar.vue")["default"]);
+Vue.component('havediscussedpie', __webpack_require__(/*! ./components/charts/havediscussedpie.vue */ "./resources/js/components/charts/havediscussedpie.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -120998,6 +121132,106 @@ component.options.__file = "resources/js/components/charts/genderpie.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_genderpie_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./genderpie.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/charts/genderpie.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_genderpie_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/charts/havediscussedbar.vue":
+/*!*************************************************************!*\
+  !*** ./resources/js/components/charts/havediscussedbar.vue ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _havediscussedbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./havediscussedbar.vue?vue&type=script&lang=js& */ "./resources/js/components/charts/havediscussedbar.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  _havediscussedbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"],
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/charts/havediscussedbar.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/charts/havediscussedbar.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/charts/havediscussedbar.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_havediscussedbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./havediscussedbar.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/charts/havediscussedbar.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_havediscussedbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/charts/havediscussedpie.vue":
+/*!*************************************************************!*\
+  !*** ./resources/js/components/charts/havediscussedpie.vue ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _havediscussedpie_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./havediscussedpie.vue?vue&type=script&lang=js& */ "./resources/js/components/charts/havediscussedpie.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  _havediscussedpie_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"],
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/charts/havediscussedpie.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/charts/havediscussedpie.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/charts/havediscussedpie.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_havediscussedpie_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./havediscussedpie.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/charts/havediscussedpie.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_havediscussedpie_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
