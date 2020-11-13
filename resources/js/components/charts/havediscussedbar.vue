@@ -67,7 +67,7 @@
                     backgroundColor: 'transparent',
                     datasets:[{
                         data: this.nums,
-                        label: "Has discussed mental health with employer",
+                        label: "Has discussed mental health with employer in the past.",
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.8)',
                             'rgba(54, 162, 235, 0.8)',

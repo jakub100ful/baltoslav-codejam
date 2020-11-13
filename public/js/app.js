@@ -1948,6 +1948,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _charts_woulddiscussbar_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./charts/woulddiscussbar.vue */ "./resources/js/components/charts/woulddiscussbar.vue");
+/* harmony import */ var _charts_knownbar_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./charts/knownbar.vue */ "./resources/js/components/charts/knownbar.vue");
 //
 //
 //
@@ -2118,6 +2119,66 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -2153,7 +2214,8 @@ __webpack_require__.r(__webpack_exports__);
     card: _card_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     Navbar: _navbar_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     Graph: _graph_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    Woulddiscussbar: _charts_woulddiscussbar_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+    Woulddiscussbar: _charts_woulddiscussbar_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+    Knownbar: _charts_knownbar_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
   },
   data: function data() {
     return {
@@ -2419,7 +2481,7 @@ __webpack_require__.r(__webpack_exports__);
         backgroundColor: 'transparent',
         datasets: [{
           data: this.nums,
-          label: "Has discussed mental health with employer",
+          label: "Has discussed mental health with employer in the past.",
           backgroundColor: ['rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)', 'rgba(255, 206, 86, 0.8)', 'rgba(75, 192, 192, 0.8)', 'rgba(153, 102, 255, 0.8)', 'rgba(255, 159, 64, 0.8)'],
           borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)']
         }]
@@ -2963,7 +3025,7 @@ __webpack_require__.r(__webpack_exports__);
         backgroundColor: 'transparent',
         datasets: [{
           data: this.nums,
-          label: "Has discussed mental health with employer",
+          label: "Willing to discuss mental health with employer",
           backgroundColor: ['rgba(75, 192, 192, 0.8)', 'rgba(153, 102, 255, 0.8)', 'rgba(255, 159, 64, 0.8)'],
           borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)']
         }]
@@ -108640,7 +108702,17 @@ var render = function() {
           _c("div", { staticClass: "col col-lg-10 m-5" }, [
             _c("div", { staticClass: "card card-transparent" }, [
               _c("div", { staticClass: "card-header" }, [
-                _c("h5", [_vm._v("Let's have a look at the people surveyed")]),
+                _c("h5", [
+                  _vm._v(
+                    "Majority of respondents work at a company size of 100-500 people, but size doesn't matter."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("h6", [
+                  _vm._v(
+                    "We also thought it was important to cover gender of the respondents, because of the well-known divide in the tech industry."
+                  )
+                ]),
                 _vm._v(" "),
                 _c(
                   "button",
@@ -108674,6 +108746,12 @@ var render = function() {
               _c("div", { staticClass: "card-body" }, [
                 _vm.demographics == "pop"
                   ? _c("div", { staticClass: "row" }, [
+                      _c("p", { staticClass: "p-3" }, [
+                        _vm._v(
+                          "The different charts show a range of company sizes. We also found that mental health issues are a systemic problem, and therefore there was no correlation between the company size and substance of mental health issues."
+                        )
+                      ]),
+                      _vm._v(" "),
                       _c(
                         "div",
                         { staticClass: "col" },
@@ -108692,6 +108770,12 @@ var render = function() {
                 _vm._v(" "),
                 _vm.demographics == "gender"
                   ? _c("div", { staticClass: "row" }, [
+                      _c("p", { staticClass: "p-3" }, [
+                        _vm._v(
+                          "Majority of respondents were men, although a substantial amount of women and other gender categories participated in the survey."
+                        )
+                      ]),
+                      _vm._v(" "),
                       _c(
                         "div",
                         { staticClass: "col" },
@@ -108736,6 +108820,8 @@ var render = function() {
           ])
         ]
       ),
+      _vm._v(" "),
+      _vm._m(3),
       _vm._v(" "),
       _c(
         "div",
@@ -108821,12 +108907,54 @@ var render = function() {
             ])
           ])
         ]
-      )
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "row row-lg-4 justify-content-md-center" }, [
+        _c("div", { staticClass: "col col-lg-10 m-5" }, [
+          _c("div", { staticClass: "card card-transparent" }, [
+            _vm._m(4),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  { staticClass: "col" },
+                  [
+                    _c("p", [
+                      _vm._v(
+                        "A quarter of people did not know if their employer provided any mental health support, infering poor indication from the employer."
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("providesbar")
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "col" },
+                  [
+                    _c("p", [
+                      _vm._v(
+                        "A third of people who received mental health benefits from their employer, did not know how to access them."
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("knownbar")
+                  ],
+                  1
+                )
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(5)
     ]),
     _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
-    _vm._m(4)
+    _vm._m(6)
   ])
 }
 var staticRenderFns = [
@@ -108934,6 +109062,18 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("h3", { staticClass: "text-dark subtitle-text" }, [
+        _vm._v(
+          "About a third of people did not have access to mental health care benefits."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c(
       "div",
       { staticClass: "row row-lg-4 justify-content-md-center" },
@@ -108942,26 +109082,98 @@ var staticRenderFns = [
           _c("div", { staticClass: "card card-transparent" }, [
             _c("div", { staticClass: "card-header" }, [
               _c("h3", { staticClass: "text-dark subtitle-text" }, [
-                _vm._v("Talking about mental health removes stigma.")
+                _vm._v(
+                  "Research has shown that people working in the tech industry are 5 times more likely to suffer from a mental health problem (BIMA, 2019)."
+                )
               ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
               _c("p", [
                 _vm._v(
-                  '\n                            "By talking about mental illness on a more regular basis, we as a society will hopefully unveil the false notions that plague this topic. When these myths are debunked, it should help remove the stigma surrounding mental health."\n                        '
+                  "\n                            The rapid growth of the sector with many attractive opportunities, 'long-hours' culture, and a predominantly younger less-experienced workforce all add to this.  \n                        "
                 )
-              ]),
-              _vm._v(" "),
+              ])
+            ])
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "container h-100", attrs: { id: "section-3" } },
+      [
+        _c(
+          "div",
+          { staticClass: "row row-lg-4 justify-content-md-center mb-500" },
+          [
+            _c("div", { staticClass: "col col-lg-10 m-5" }, [
+              _c("div", { staticClass: "card card-transparent" }, [
+                _c("div", { staticClass: "card-header" }, [
+                  _c(
+                    "h3",
+                    { staticClass: "text-dark subtitle-text text-center" },
+                    [_vm._v("It all starts with a conversation.")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("p", [
+                    _vm._v(
+                      "\n                            Another study produced by the Mental Health Foundation found 38% of people feared losing their job security and future prospects after speaking up about a mental health problem. Further 17% worried their colleagues would judge them for speaking up about these issues.\n                        "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("h3", { staticClass: "text-center" }, [
+                    _vm._v("And let's not forget!")
+                  ]),
+                  _vm._v(" "),
+                  _c("h5", { staticClass: "text-center" }, [
+                    _vm._v(
+                      "Addressing wellbeing at work increases productivity by as much as 12%."
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "row row-lg-4 justify-content-md-center mb-500" },
+          [
+            _c("div", { staticClass: "col col-lg-10 m-5" }, [
+              _c("div", { staticClass: "card card-transparent" }, [
+                _c(
+                  "h5",
+                  { staticClass: "text-dark subtitle-text text-center m-5" },
+                  [
+                    _vm._v(
+                      "Let's start talking about our mental health, so that we can all feel better and produce better work together."
+                    )
+                  ]
+                )
+              ])
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "row align-items-center min-vh-100" }, [
+          _c("div", { staticClass: "col col-lg text-light center-block" }, [
+            _c("h1", { staticClass: "text-center display-1 title-text" }, [
               _c(
                 "a",
                 {
-                  attrs: {
-                    href:
-                      "https://www.banyanmentalhealth.com/2018/08/01/why-talking-about-mental-health-is-so-important/"
-                  }
+                  staticStyle: { "text-decoration": "none" },
+                  attrs: { href: "https://www.youtube.com/watch?v=oHg5SJYRHA0" }
                 },
-                [_vm._v("- Banyan Mental Health Program")]
+                [_vm._v("Thank You:)")]
               )
             ])
           ])
