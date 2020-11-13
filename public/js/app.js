@@ -2002,6 +2002,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2039,7 +2050,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      data: {}
+      data: {},
+      demographics: 'pop',
+      k: 0
     };
   },
   mounted: function mounted() {
@@ -2128,9 +2141,7 @@ __webpack_require__.r(__webpack_exports__);
       nums: [],
       lables: [],
       options: {
-        tooltips: {
-          enabled: false
-        }
+        tooltips: {}
       }
     };
   },
@@ -2202,9 +2213,7 @@ __webpack_require__.r(__webpack_exports__);
       lables: [],
       options: {
         cutoutPercentage: 50,
-        tooltips: {
-          enabled: false
-        }
+        tooltips: {}
       }
     };
   },
@@ -2240,6 +2249,88 @@ __webpack_require__.r(__webpack_exports__);
           label: "Size of company the person works at",
           backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
           borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)']
+        }]
+      };
+      console.log('Component render.');
+      this.renderChart(d, this.options);
+    }
+  },
+  mounted: function mounted() {
+    this.getData();
+    console.log('Component mounted.');
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/charts/illammount.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/charts/illammount.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_chartjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-chartjs */ "./node_modules/vue-chartjs/es/index.js");
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  "extends": vue_chartjs__WEBPACK_IMPORTED_MODULE_0__["Pie"],
+  data: function data() {
+    return {
+      data: null,
+      nums: [],
+      lables: [],
+      options: {
+        tooltips: {},
+        legend: {
+          labels: {
+            // This more specific font property overrides the global property
+            fontColor: 'black'
+          }
+        }
+      }
+    };
+  },
+  props: {
+    styles: {
+      "color": "red"
+    }
+  },
+  methods: {
+    getData: function getData() {
+      var _this = this;
+
+      axios.get('/data/ill').then(function (rsp) {
+        console.log(rsp.data);
+        _this.data = rsp.data;
+
+        _this.data.forEach(function (element) {
+          _this.nums.push(element.total);
+        });
+
+        _this.data.forEach(function (element) {
+          _this.lables.push(element.currentlyHasMentalHealthDisorder);
+        });
+
+        _this.renderC();
+      });
+    },
+    renderC: function renderC() {
+      var d = {
+        labels: this.lables,
+        lineTension: 5,
+        borderWidth: 100,
+        borderColor: '#F2A727',
+        pointBackgroundColor: '#F2A727',
+        backgroundColor: 'transparent',
+        datasets: [{
+          data: this.nums,
+          label: "Different types of illness",
+          backgroundColor: ["#5c53c6", "#59dafb", "#510013", "#aa7bff", "#e8597c", "#0054c9", "#ff85ee", "#2a1b4d", "#9da4ff", "#676b9e", "#676b9e"],
+          borderColor: []
         }]
       };
       console.log('Component render.');
@@ -2630,9 +2721,7 @@ __webpack_require__.r(__webpack_exports__);
       nums: [],
       lables: [],
       options: {
-        tooltips: {
-          enabled: false
-        }
+        tooltips: {}
       }
     };
   },
@@ -2640,7 +2729,7 @@ __webpack_require__.r(__webpack_exports__);
     getData: function getData() {
       var _this = this;
 
-      axios.get('/data/gender').then(function (rsp) {
+      axios.get('/data/pop').then(function (rsp) {
         console.log(rsp.data);
         _this.data = rsp.data;
 
@@ -2651,6 +2740,9 @@ __webpack_require__.r(__webpack_exports__);
         _this.data.forEach(function (element) {
           _this.lables.push(element.employeeCount);
         });
+
+        _this.lables = ["Self Employed", "1-5", "6-25", "26-100", "100-500", "500-1000", "more than 1000"];
+        _this.nums = [_this.data[0].total, _this.data[1].total, _this.data[3].total, _this.data[5].total, _this.data[2].total, _this.data[4].total, _this.data[6].total];
 
         _this.renderC();
       });
@@ -107996,15 +108088,86 @@ var render = function() {
       [
         _c("div", { staticClass: "col col-lg-4" }, [
           _c("div", { staticClass: "card" }, [
-            _vm._m(2),
+            _c("div", { staticClass: "card-header" }, [
+              _c("h5", [_vm._v("Demographics of the people asked")]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.demographics = "pop"
+                      _vm.k += 1
+                    }
+                  }
+                },
+                [_vm._v("Population of the company")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.demographics = "gender"
+                      _vm.k += 1
+                    }
+                  }
+                },
+                [_vm._v("Gender")]
+              )
+            ]),
             _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [_c("test")], 1)
+            _c("div", { staticClass: "card-body" }, [
+              _vm.demographics == "pop"
+                ? _c(
+                    "div",
+                    [
+                      _c("test", { key: _vm.k }),
+                      _vm._v(" "),
+                      _c("poppie", { key: _vm.k })
+                    ],
+                    1
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.demographics == "gender"
+                ? _c(
+                    "div",
+                    [
+                      _c("genderbar", { key: _vm.k }),
+                      _vm._v(" "),
+                      _c("genderpie", { key: _vm.k })
+                    ],
+                    1
+                  )
+                : _vm._e()
+            ])
           ])
         ])
       ]
     ),
     _vm._v(" "),
-    _vm._m(3)
+    _c(
+      "div",
+      { staticClass: "row row-lg-4 d-flex flex-row justify-content-md-center" },
+      [
+        _c("div", { staticClass: "col col-lg-6" }, [
+          _c("div", { staticClass: "row-center" }, [
+            _c("div", { staticClass: "card" }, [
+              _vm._m(2),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "card-body" },
+                [_c("illammount"), _vm._v(" "), _c("illnesstypes")],
+                1
+              )
+            ])
+          ])
+        ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -108037,7 +108200,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "card-header" }, [
               _c("h5", [
                 _vm._v(
-                  "67% of people identified themselves to have had a mental health illness at some point"
+                  "We looked at a survey of 1173 people who were asked about mental health issues in the tech industry"
                 )
               ])
             ]),
@@ -108052,35 +108215,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-header" }, [
-      _c("h5", [_vm._v("Company Populations")])
+    return _c("div", { staticClass: "card-header align-self-center" }, [
+      _c("h3", [
+        _vm._v(
+          "67% of people identified themselves to have had a mental health illness at some point"
+        )
+      ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "row row-lg-4 d-flex flex-row justify-content-md-center" },
-      [
-        _c("div", { staticClass: "col col-lg-6" }, [
-          _c("div", { staticClass: "row-center" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-header align-self-center" }, [
-                _c("h3", [
-                  _vm._v(
-                    "67% of people identified themselves to have had a mental health illness at some point"
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" })
-            ])
-          ])
-        ])
-      ]
-    )
   }
 ]
 render._withStripped = true
@@ -120459,6 +120600,7 @@ Vue.component('illnesstypes', __webpack_require__(/*! ./components/charts/illnes
 Vue.component('poppie', __webpack_require__(/*! ./components/charts/poppie.vue */ "./resources/js/components/charts/poppie.vue")["default"]);
 Vue.component('genderbar', __webpack_require__(/*! ./components/charts/genderbar.vue */ "./resources/js/components/charts/genderbar.vue")["default"]);
 Vue.component('genderpie', __webpack_require__(/*! ./components/charts/genderpie.vue */ "./resources/js/components/charts/genderpie.vue")["default"]);
+Vue.component('illammount', __webpack_require__(/*! ./components/charts/illammount.vue */ "./resources/js/components/charts/illammount.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -120838,6 +120980,56 @@ component.options.__file = "resources/js/components/charts/genderpie.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_genderpie_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./genderpie.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/charts/genderpie.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_genderpie_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/charts/illammount.vue":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/charts/illammount.vue ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _illammount_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./illammount.vue?vue&type=script&lang=js& */ "./resources/js/components/charts/illammount.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  _illammount_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"],
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/charts/illammount.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/charts/illammount.vue?vue&type=script&lang=js&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/charts/illammount.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_illammount_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./illammount.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/charts/illammount.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_illammount_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 

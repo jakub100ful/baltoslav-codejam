@@ -16,7 +16,7 @@
 
                 options:{
                    tooltips:{
-                        enabled: false,
+                        
                    }
                 }
 

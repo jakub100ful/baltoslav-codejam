@@ -15,11 +15,16 @@
                 lables: [],
 
                 options:{
-                    cutoutPercentage: 50,
-
+                    
                    tooltips:{
                         
-                   }
+                   },
+                   legend: {
+                        labels: {
+                            // This more specific font property overrides the global property
+                            fontColor: 'black'
+                        }
+                    }
                 }
 
 
@@ -27,9 +32,15 @@
             }
         },
 
+        props:{
+            styles:{
+                "color": "red"
+            }
+        },
+
         methods:{
             getData(){
-                    axios.get('/data/gender').then(rsp=>{
+                    axios.get('/data/ill').then(rsp=>{
                     console.log(rsp.data);
                     this.data = rsp.data;
 
@@ -37,12 +48,14 @@
                         this.nums.push(element.total);
                     });
 
+                    this.data.forEach(element => {
+                        this.lables.push(element.currentlyHasMentalHealthDisorder);
+                    });
+
                     
                     
 
-                    this.data.forEach(element => {
-                        this.lables.push(element.gender);
-                    });
+                
 
                     
                     this.renderC();
@@ -56,29 +69,29 @@
 
                 let d = {
                     labels: this.lables,
-                    lineTension: 0,
-                    borderWidth: 1,
+                    lineTension: 5,
+                    borderWidth: 100,
                     borderColor: '#F2A727',
                     pointBackgroundColor: '#F2A727',
                     backgroundColor: 'transparent',
                     datasets:[{
                         data: this.nums,
-                        label: "Size of company the person works at",
+                        label: "Different types of illness",
                         backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
+                            "#5c53c6",
+                            "#59dafb",
+                            "#510013",
+                            "#aa7bff",
+                            "#e8597c",
+                            "#0054c9",
+                            "#ff85ee",
+                            "#2a1b4d",
+                            "#9da4ff",
+                            "#676b9e",
+                            "#676b9e"
                         ],
                         borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
+                            
                         ],
                     }]
                 }

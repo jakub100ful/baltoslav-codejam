@@ -16,7 +16,7 @@
 
                 options:{
                    tooltips:{
-                        enabled: false,
+                        
                    }
                 }
 
@@ -27,7 +27,7 @@
 
         methods:{
             getData(){
-                    axios.get('/data/gender').then(rsp=>{
+                    axios.get('/data/pop').then(rsp=>{
                     console.log(rsp.data);
                     this.data = rsp.data;
 
@@ -42,9 +42,25 @@
                         this.lables.push(element.employeeCount);
                     });
 
-                    
+                    this.lables = [
+                        "Self Employed", 
+                        "1-5",
+                        "6-25",
+                        "26-100",
+                        "100-500",
+                        "500-1000",
+                        "more than 1000",
+                    ];
 
-                    
+                    this.nums = [
+                        this.data[0].total,
+                        this.data[1].total,
+                        this.data[3].total,
+                        this.data[5].total,
+                        this.data[2].total,
+                        this.data[4].total,
+                        this.data[6].total,
+                    ]
                     this.renderC();
 
 

@@ -29,6 +29,7 @@ Vue.component('illnesstypes', require('./components/charts/illnesstypes.vue').de
 Vue.component('poppie', require('./components/charts/poppie.vue').default);
 Vue.component('genderbar', require('./components/charts/genderbar.vue').default);
 Vue.component('genderpie', require('./components/charts/genderpie.vue').default);
+Vue.component('illammount', require('./components/charts/illammount.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

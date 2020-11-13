@@ -10,7 +10,7 @@
             <div class="col col-lg-4">
                 <div class="card">
                     <div class="card-header">
-                        <h5>67% of people identified themselves to have had a mental health illness at some point</h5>
+                        <h5>We looked at a survey of 1173 people who were asked about mental health issues in the tech industry</h5>
                     </div>
                     <div class="card-body">
 
@@ -22,10 +22,20 @@
             <div class="col col-lg-4">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Company Populations</h5>
+                        <h5>Demographics of the people asked</h5>
+                        <button  @click="demographics = 'pop'; k+= 1" >Population of the company</button>
+                        <button  @click="demographics = 'gender'; k+= 1" >Gender</button>
                     </div>
                     <div class="card-body">
-                        <test />
+                        <div v-if="demographics == 'pop'">
+                            <test :key="k" />
+                            <poppie :key="k"/>
+                        </div>
+                        <div v-if="demographics == 'gender'">
+                            <genderbar :key="k" />
+                            <genderpie :key="k"/>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -38,7 +48,8 @@
                             <h3>67% of people identified themselves to have had a mental health illness at some point</h3>
                         </div>
                         <div class="card-body">
-
+                            <illammount/>
+                            <illnesstypes/>
                         </div>
                     </div>
                 </div>
@@ -94,6 +105,9 @@
             data() {
                 return{
                     data: {},
+                    demographics: 'pop',
+                    k: 0,
+
                 }
             },
 
