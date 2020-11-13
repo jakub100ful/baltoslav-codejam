@@ -20,20 +20,20 @@
                 <div class="col col-lg-10 m-5">
                     <div class="card card-transparent">
                         <div class="card-header">
-                            <h5>Demographics of the people asked</h5>
+                            <h5>Let's have a look at the people surveyed</h5>
                             <button class="btn btn-light" @click="demographics = 'pop'; k+= 1" >Population of the company</button>
                             <button class="btn btn-light" @click="demographics = 'gender'; k+= 1" >Gender</button>
                         </div>
                         <div class="card-body">
 
-                                    <div class="row" v-if="demographics == 'pop'">
-                                        <div class="col">
-                                            <test :key="k" />
-                                        </div>
-                                        <div class="col">
-                                            <poppie :key="k"/>
-                                        </div>
+                                <div class="row" v-if="demographics == 'pop'">
+                                    <div class="col">
+                                        <test :key="k" />
                                     </div>
+                                    <div class="col">
+                                        <poppie :key="k"/>
+                                    </div>
+                                </div>
 
                                 <div class="row" v-if="demographics == 'gender'">
                                     <div class="col">
@@ -56,7 +56,7 @@
                     <div class="row-center">
                         <div class="card">
                             <div class="card-header align-self-center">
-                                <h3>63.2% of people identified themselves to have had, or think they had a mental health illness at some point.</h3>
+                                <h5>63.2% of people identified themselves to have had, or think they had a mental health illness at some point.</h5>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -72,23 +72,63 @@
                     </div>
                 </div>
             </div>
-            <div class="row row-lg-10 d-flex flex-row justify-content-md-center">
+            <div class="row row-lg-4 d-flex flex-row justify-content-md-center">
                 <div class="col col-lg-10 m-5">
-                    <div class="row-center">
-                        <div class="card">
-                            <div class="card-header align-self-center">
-                                <h3>Most people have not had a conversation about their mental health, but people are willing to.</h3>
+                    <div class="card card-transparent">
+                        <div class="card-header">
+                                <h5>Most people have not had a conversation about their mental health, but people are willing to!</h5>
+                                <button class="btn btn-light" @click="discussions = 'bar'; k+= 1" >Bar Chart</button>
+                                <button class="btn btn-light" @click="discussions = 'pie'; k+= 1" >Pie Chart</button>
                             </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <havediscussedbar/>
-                                    </div>
-                                    <div class="col">
-                                        <woulddiscussbar/>
-                                    </div>
+                        <div class="card-body">
+                            <div class="row" v-if="discussions == 'bar'">
+                                <div class="col">
+                                    <havediscussedbar/>
+                                </div>
+                                <div class="col">
+                                    <woulddiscussbar/>
                                 </div>
                             </div>
+
+                            <div class="row" v-if="discussions == 'pie'">
+                                <div class="col">
+                                    <havediscussedpie/>
+                                </div>
+                                <div class="col">
+                                    <woulddiscusspie/>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-lg-4 justify-content-md-center">
+                <div class="col col-lg-10 m-5">
+                    <div class="card card-transparent">
+                        <div class="card-header">
+                            <h3 class="text-dark subtitle-text">Talking about mental health removes stigma.</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                "By talking about mental illness on a more regular basis, we as a society will hopefully unveil the false notions that plague this topic. When these myths are debunked, it should help remove the stigma surrounding mental health."
+                            </p>
+                            <a href="https://www.banyanmentalhealth.com/2018/08/01/why-talking-about-mental-health-is-so-important/">- Banyan Mental Health Program</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-lg-4 justify-content-md-center">
+                <div class="col col-lg-10 m-5">
+                    <div class="card card-transparent">
+                        <div class="card-header">
+                            <h3 class="text-dark subtitle-text">Talking about mental health removes stigma.</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                "By talking about mental illness on a more regular basis, we as a society will hopefully unveil the false notions that plague this topic. When these myths are debunked, it should help remove the stigma surrounding mental health."
+                            </p>
+                            <a href="https://www.banyanmentalhealth.com/2018/08/01/why-talking-about-mental-health-is-so-important/">- Banyan Mental Health Program</a>
                         </div>
                     </div>
                 </div>
@@ -171,6 +211,7 @@ import Woulddiscussbar from './charts/woulddiscussbar.vue';
                 return{
                     data: {},
                     demographics: 'pop',
+                    discussions: 'bar',
                     k: 0,
 
                 }

@@ -2078,6 +2078,46 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2119,6 +2159,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       data: {},
       demographics: 'pop',
+      discussions: 'bar',
       k: 0
     };
   },
@@ -2379,7 +2420,7 @@ __webpack_require__.r(__webpack_exports__);
         datasets: [{
           data: this.nums,
           label: "Has discussed mental health with employer",
-          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+          backgroundColor: ['rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)', 'rgba(255, 206, 86, 0.8)', 'rgba(75, 192, 192, 0.8)', 'rgba(153, 102, 255, 0.8)', 'rgba(255, 159, 64, 0.8)'],
           borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)']
         }]
       };
@@ -2791,7 +2832,7 @@ __webpack_require__.r(__webpack_exports__);
         datasets: [{
           data: this.nums,
           label: "Has discussed mental health with employer",
-          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+          backgroundColor: ['rgba(75, 192, 192, 0.8)', 'rgba(153, 102, 255, 0.8)', 'rgba(255, 159, 64, 0.8)'],
           borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)']
         }]
       };
@@ -108467,7 +108508,7 @@ var render = function() {
           _c("div", { staticClass: "col col-lg-10 m-5" }, [
             _c("div", { staticClass: "card card-transparent" }, [
               _c("div", { staticClass: "card-header" }, [
-                _c("h5", [_vm._v("Demographics of the people asked")]),
+                _c("h5", [_vm._v("Let's have a look at the people surveyed")]),
                 _vm._v(" "),
                 _c(
                   "button",
@@ -108567,37 +108608,93 @@ var render = function() {
       _c(
         "div",
         {
-          staticClass: "row row-lg-10 d-flex flex-row justify-content-md-center"
+          staticClass: "row row-lg-4 d-flex flex-row justify-content-md-center"
         },
         [
           _c("div", { staticClass: "col col-lg-10 m-5" }, [
-            _c("div", { staticClass: "row-center" }, [
-              _c("div", { staticClass: "card" }, [
-                _vm._m(3),
+            _c("div", { staticClass: "card card-transparent" }, [
+              _c("div", { staticClass: "card-header" }, [
+                _c("h5", [
+                  _vm._v(
+                    "Most people have not had a conversation about their mental health, but people are willing to!"
+                  )
+                ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "row" }, [
-                    _c(
-                      "div",
-                      { staticClass: "col" },
-                      [_c("havediscussedbar")],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col" },
-                      [_c("woulddiscussbar")],
-                      1
-                    )
-                  ])
-                ])
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-light",
+                    on: {
+                      click: function($event) {
+                        _vm.discussions = "bar"
+                        _vm.k += 1
+                      }
+                    }
+                  },
+                  [_vm._v("Bar Chart")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-light",
+                    on: {
+                      click: function($event) {
+                        _vm.discussions = "pie"
+                        _vm.k += 1
+                      }
+                    }
+                  },
+                  [_vm._v("Pie Chart")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _vm.discussions == "bar"
+                  ? _c("div", { staticClass: "row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "col" },
+                        [_c("havediscussedbar")],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col" },
+                        [_c("woulddiscussbar")],
+                        1
+                      )
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.discussions == "pie"
+                  ? _c("div", { staticClass: "row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "col" },
+                        [_c("havediscussedpie")],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col" },
+                        [_c("woulddiscusspie")],
+                        1
+                      )
+                    ])
+                  : _vm._e()
               ])
             ])
           ])
         ]
       )
-    ])
+    ]),
+    _vm._v(" "),
+    _vm._m(3),
+    _vm._v(" "),
+    _vm._m(4)
   ])
 }
 var staticRenderFns = [
@@ -108655,7 +108752,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header align-self-center" }, [
-      _c("h3", [
+      _c("h5", [
         _vm._v(
           "63.2% of people identified themselves to have had, or think they had a mental health illness at some point."
         )
@@ -108666,13 +108763,79 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-header align-self-center" }, [
-      _c("h3", [
-        _vm._v(
-          "Most people have not had a conversation about their mental health, but people are willing to."
-        )
-      ])
-    ])
+    return _c(
+      "div",
+      { staticClass: "row row-lg-4 justify-content-md-center" },
+      [
+        _c("div", { staticClass: "col col-lg-10 m-5" }, [
+          _c("div", { staticClass: "card card-transparent" }, [
+            _c("div", { staticClass: "card-header" }, [
+              _c("h3", { staticClass: "text-dark subtitle-text" }, [
+                _vm._v("Talking about mental health removes stigma.")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c("p", [
+                _vm._v(
+                  '\n                            "By talking about mental illness on a more regular basis, we as a society will hopefully unveil the false notions that plague this topic. When these myths are debunked, it should help remove the stigma surrounding mental health."\n                        '
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href:
+                      "https://www.banyanmentalhealth.com/2018/08/01/why-talking-about-mental-health-is-so-important/"
+                  }
+                },
+                [_vm._v("- Banyan Mental Health Program")]
+              )
+            ])
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "row row-lg-4 justify-content-md-center" },
+      [
+        _c("div", { staticClass: "col col-lg-10 m-5" }, [
+          _c("div", { staticClass: "card card-transparent" }, [
+            _c("div", { staticClass: "card-header" }, [
+              _c("h3", { staticClass: "text-dark subtitle-text" }, [
+                _vm._v("Talking about mental health removes stigma.")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c("p", [
+                _vm._v(
+                  '\n                            "By talking about mental illness on a more regular basis, we as a society will hopefully unveil the false notions that plague this topic. When these myths are debunked, it should help remove the stigma surrounding mental health."\n                        '
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href:
+                      "https://www.banyanmentalhealth.com/2018/08/01/why-talking-about-mental-health-is-so-important/"
+                  }
+                },
+                [_vm._v("- Banyan Mental Health Program")]
+              )
+            ])
+          ])
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
