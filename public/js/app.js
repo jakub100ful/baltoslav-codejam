@@ -121992,7 +121992,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/Clouds.png?163ea25d9a85bcc001586589840d3bd8";
+throw new Error("Module build failed (from ./node_modules/img-loader/index.js):\nError: ENOENT: no such file or directory, open 'C:\\xampp\\htdocs\\codejam\\baltoslav-codejam\\storage\\app\\public\\Clouds.png'");
 
 /***/ }),
 
