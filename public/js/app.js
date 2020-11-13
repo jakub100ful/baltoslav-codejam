@@ -2050,6 +2050,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2498,7 +2504,7 @@ __webpack_require__.r(__webpack_exports__);
         datasets: [{
           data: this.nums,
           label: "Different types of illness",
-          backgroundColor: ["#5c53c6", "#59dafb", "#510013", "#aa7bff", "#e8597c", "#0054c9", "#ff85ee", "#2a1b4d", "#9da4ff", "#676b9e", "#676b9e"],
+          backgroundColor: ['rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)', 'rgba(255, 206, 86, 0.8)', 'rgba(75, 192, 192, 0.8)', 'rgba(153, 102, 255, 0.8)', 'rgba(255, 159, 64, 0.8)', 'rgba(242, 140, 70, 0.8)'],
           borderColor: []
         }]
       };
@@ -108508,12 +108514,13 @@ var render = function() {
               _c("div", { staticClass: "card" }, [
                 _vm._m(2),
                 _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "card-body" },
-                  [_c("illammount"), _vm._v(" "), _c("illnesstypes")],
-                  1
-                )
+                _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col" }, [_c("illammount")], 1),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col" }, [_c("illnesstypes")], 1)
+                  ])
+                ])
               ])
             ])
           ])
@@ -108579,7 +108586,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "card-header align-self-center" }, [
       _c("h3", [
         _vm._v(
-          "67% of people identified themselves to have had a mental health illness at some point"
+          "63.2% of people identified themselves to have had, or think they had a mental health illness at some point."
         )
       ])
     ])
