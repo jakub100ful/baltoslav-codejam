@@ -4,10 +4,7 @@
             <h1>Circle Pack in D3</h1>
             <h2>{{ msg }}</h2>
 
-            <svg
-                :height='height'
-                :width='width'
-            >
+            
         </div>
     </div>
 </template>

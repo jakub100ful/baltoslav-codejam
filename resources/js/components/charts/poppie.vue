@@ -13,6 +13,10 @@
                 data: null,
                 nums : [],
                 lables: [],
+                total: 0,
+                per: 0,
+
+
 
                 options:{
                     
@@ -61,25 +65,30 @@
                         "500-1000",
                         "more than 1000",
                     ];
-                    let total = 0;
+                    
 
                     this.data.forEach(element => {
-                        total += parseInt(element.total);
+                        this.total += parseInt(element.total);
                     });
 
+                    var newdata = [];
+
                     this.data.forEach(element => {
-                        element.total =  Math.floor( (element.total/total) * 100);
+                    
+                        newdata.push(Math.round( (element.total/this.total) * 100));
+                        this.per += Math.floor( (element.total/this.total) * 100);
                     });
 
                     this.nums = [
-                        this.data[0].total,
-                        this.data[1].total,
-                        this.data[3].total,
-                        this.data[5].total,
-                        this.data[2].total,
-                        this.data[4].total,
-                        this.data[6].total,
-                    ]
+                        newdata[0],
+                        newdata[1],
+                        newdata[3],
+                        newdata[5],
+                        newdata[2],
+                        newdata[4],
+                        newdata[6],
+                    ];
+
                    
                     
 
