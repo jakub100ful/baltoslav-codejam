@@ -2449,6 +2449,8 @@ __webpack_require__.r(__webpack_exports__);
       data: null,
       nums: [],
       lables: [],
+      total: 0,
+      per: 0,
       options: {
         tooltips: {},
         legend: {
@@ -2482,17 +2484,19 @@ __webpack_require__.r(__webpack_exports__);
         });
 
         _this.lables = ["Self Employed", "1-5", "6-25", "26-100", "100-500", "500-1000", "more than 1000"];
-        var total = 0;
 
         _this.data.forEach(function (element) {
-          total += parseInt(element.total);
+          _this.total += parseInt(element.total);
         });
+
+        var newdata = [];
 
         _this.data.forEach(function (element) {
-          element.total = Math.floor(element.total / total * 100);
+          newdata.push(Math.round(element.total / _this.total * 100));
+          _this.per += Math.floor(element.total / _this.total * 100);
         });
 
-        _this.nums = [_this.data[0].total, _this.data[1].total, _this.data[3].total, _this.data[5].total, _this.data[2].total, _this.data[4].total, _this.data[6].total];
+        _this.nums = [newdata[0], newdata[1], newdata[3], newdata[5], newdata[2], newdata[4], newdata[6]];
 
         _this.renderC();
       });
