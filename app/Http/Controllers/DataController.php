@@ -184,5 +184,64 @@ class DataController extends Controller
      return $r;
      }
 
+     public function popcomp(){
+
+        $p =  DB::table('mytable')
+                     ->select('employeeCount', DB::raw('count(*) as total'))
+                     ->groupBy('employeeCount')
+                     ->get();
+    
+        
+    
+    
+            
+        
+            
+
+        $r =  DB::table('mytable')
+                  ->select(['employeeCount','levelOfImportanceEmployerPlacesOnMentalHealth'])
+                  ->get();
+ 
+     
+
+     $response = [];
+
+     foreach($r as $x){
+        if($x->employeeCount != null){
+            if(isset($response[$x->employeeCount]) ){
+            
+                $response[$x->employeeCount] += $x->levelOfImportanceEmployerPlacesOnMentalHealth;
+            }else{
+                $response[$x->employeeCount] = $x->levelOfImportanceEmployerPlacesOnMentalHealth;
+            } 
+        }
+        
+
+     }
+     $workers = [];
+     foreach($r as $x){
+         if($x->employeeCount != null){
+            if(isset($workers[$x->employeeCount]) ){
+                $workers[$x->employeeCount] += 1;
+            }else{
+                $workers[$x->employeeCount] = 1;
+            }
+         }
+        
+
+     }
+
+     foreach(array_keys($workers)  as $n){
+        //var_dump($n);
+         //$n["levelOfImportanceEmployerPlacesOnMentalHealth"] =  $n["levelOfImportanceEmployerPlacesOnMentalHealth"] /  $workers[$n["employeeCount"]];
+        $response[$n] = $response[$n] /  $workers[$n];
+        }
+     
+
+
+     return $response;
+
+     }
+
 
 }
