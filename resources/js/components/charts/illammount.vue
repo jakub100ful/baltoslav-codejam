@@ -13,9 +13,10 @@
                 data: null,
                 nums : [],
                 lables: [],
+                total: 0,
 
                 options:{
-                    
+                    cutoutPercentage: 50,
                    tooltips:{
                         
                    },
@@ -44,15 +45,27 @@
                     console.log(rsp.data);
                     this.data = rsp.data;
 
+                    
                     this.data.forEach(element => {
                         this.nums.push(element.total);
+                        this.total += parseInt(element.total);
                     });
+                     var newnum = [];
+
+                    this.data.forEach(element => {
+                        console.log(element.total);
+                        newnum.push((parseInt(element.total) / this.total) * 100);
+                    });
+
+                   
+
 
                     this.data.forEach(element => {
                         this.lables.push(element.currentlyHasMentalHealthDisorder);
                     });
 
-                    
+                    this.nums = newnum;
+
                     
 
                 

@@ -2452,7 +2452,9 @@ __webpack_require__.r(__webpack_exports__);
       data: null,
       nums: [],
       lables: [],
+      total: 0,
       options: {
+        cutoutPercentage: 50,
         tooltips: {},
         legend: {
           labels: {
@@ -2478,11 +2480,22 @@ __webpack_require__.r(__webpack_exports__);
 
         _this.data.forEach(function (element) {
           _this.nums.push(element.total);
+
+          _this.total += parseInt(element.total);
+        });
+
+        var newnum = [];
+
+        _this.data.forEach(function (element) {
+          console.log(element.total);
+          newnum.push(parseInt(element.total) / _this.total * 100);
         });
 
         _this.data.forEach(function (element) {
           _this.lables.push(element.currentlyHasMentalHealthDisorder);
         });
+
+        _this.nums = newnum;
 
         _this.renderC();
       });
