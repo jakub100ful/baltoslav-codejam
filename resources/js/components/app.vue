@@ -72,6 +72,27 @@
                     </div>
                 </div>
             </div>
+            <div class="row row-lg-10 d-flex flex-row justify-content-md-center">
+                <div class="col col-lg-10 m-5">
+                    <div class="row-center">
+                        <div class="card">
+                            <div class="card-header align-self-center">
+                                <h3>Most people have not had a conversation about their mental health, but people are willing to.</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <havediscussedbar/>
+                                    </div>
+                                    <div class="col">
+                                        <woulddiscussbar/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -113,6 +134,7 @@
     import Navbar from './navbar.vue';
     import Graph from './graph.vue';
     import { ref, onMounted, onUnmounted } from 'vue';
+import Woulddiscussbar from './charts/woulddiscussbar.vue';
 
     export default {
         setup() {
@@ -144,7 +166,7 @@
             }
         },
         
-        components: { card, Navbar, Graph },
+        components: { card, Navbar, Graph, Woulddiscussbar },
             data() {
                 return{
                     data: {},

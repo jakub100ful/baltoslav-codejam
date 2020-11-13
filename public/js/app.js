@@ -1947,6 +1947,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _graph_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./graph.vue */ "./resources/js/components/graph.vue");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _charts_woulddiscussbar_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./charts/woulddiscussbar.vue */ "./resources/js/components/charts/woulddiscussbar.vue");
 //
 //
 //
@@ -2056,6 +2057,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -2089,7 +2112,8 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     card: _card_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     Navbar: _navbar_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    Graph: _graph_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    Graph: _graph_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    Woulddiscussbar: _charts_woulddiscussbar_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
   data: function data() {
     return {
@@ -108538,6 +108562,40 @@ var render = function() {
             ])
           ])
         ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "row row-lg-10 d-flex flex-row justify-content-md-center"
+        },
+        [
+          _c("div", { staticClass: "col col-lg-10 m-5" }, [
+            _c("div", { staticClass: "row-center" }, [
+              _c("div", { staticClass: "card" }, [
+                _vm._m(3),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col" },
+                      [_c("havediscussedbar")],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col" },
+                      [_c("woulddiscussbar")],
+                      1
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ]
       )
     ])
   ])
@@ -108600,6 +108658,18 @@ var staticRenderFns = [
       _c("h3", [
         _vm._v(
           "63.2% of people identified themselves to have had, or think they had a mental health illness at some point."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header align-self-center" }, [
+      _c("h3", [
+        _vm._v(
+          "Most people have not had a conversation about their mental health, but people are willing to."
         )
       ])
     ])
@@ -122005,7 +122075,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/img-loader/index.js):\nError: ENOENT: no such file or directory, open 'C:\\xampp\\htdocs\\codejam\\baltoslav-codejam\\storage\\app\\public\\Clouds.png'");
+module.exports = "/images/Clouds.png?163ea25d9a85bcc001586589840d3bd8";
 
 /***/ }),
 
