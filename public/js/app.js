@@ -2107,6 +2107,332 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/charts/genderbar.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/charts/genderbar.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_chartjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-chartjs */ "./node_modules/vue-chartjs/es/index.js");
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  "extends": vue_chartjs__WEBPACK_IMPORTED_MODULE_0__["Bar"],
+  data: function data() {
+    return {
+      data: null,
+      nums: [],
+      lables: [],
+      options: {
+        tooltips: {
+          enabled: false
+        }
+      }
+    };
+  },
+  methods: {
+    getData: function getData() {
+      var _this = this;
+
+      axios.get('/data/gender').then(function (rsp) {
+        console.log(rsp.data);
+        _this.data = rsp.data;
+
+        _this.data.forEach(function (element) {
+          _this.nums.push(element.total);
+        });
+
+        _this.data.forEach(function (element) {
+          _this.lables.push(element.gender);
+        });
+
+        _this.renderC();
+      });
+    },
+    renderC: function renderC() {
+      var d = {
+        labels: this.lables,
+        lineTension: 0,
+        borderWidth: 1,
+        borderColor: '#F2A727',
+        pointBackgroundColor: '#F2A727',
+        backgroundColor: 'transparent',
+        datasets: [{
+          data: this.nums,
+          label: "Size of company the person works at",
+          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)']
+        }]
+      };
+      console.log('Component render.');
+      this.renderChart(d, this.options);
+    }
+  },
+  mounted: function mounted() {
+    this.getData();
+    console.log('Component mounted.');
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/charts/genderpie.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/charts/genderpie.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_chartjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-chartjs */ "./node_modules/vue-chartjs/es/index.js");
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  "extends": vue_chartjs__WEBPACK_IMPORTED_MODULE_0__["Pie"],
+  data: function data() {
+    return {
+      data: null,
+      nums: [],
+      lables: [],
+      options: {
+        cutoutPercentage: 50,
+        tooltips: {
+          enabled: false
+        }
+      }
+    };
+  },
+  methods: {
+    getData: function getData() {
+      var _this = this;
+
+      axios.get('/data/gender').then(function (rsp) {
+        console.log(rsp.data);
+        _this.data = rsp.data;
+
+        _this.data.forEach(function (element) {
+          _this.nums.push(element.total);
+        });
+
+        _this.data.forEach(function (element) {
+          _this.lables.push(element.gender);
+        });
+
+        _this.renderC();
+      });
+    },
+    renderC: function renderC() {
+      var d = {
+        labels: this.lables,
+        lineTension: 0,
+        borderWidth: 1,
+        borderColor: '#F2A727',
+        pointBackgroundColor: '#F2A727',
+        backgroundColor: 'transparent',
+        datasets: [{
+          data: this.nums,
+          label: "Size of company the person works at",
+          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)']
+        }]
+      };
+      console.log('Component render.');
+      this.renderChart(d, this.options);
+    }
+  },
+  mounted: function mounted() {
+    this.getData();
+    console.log('Component mounted.');
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/charts/illnesstypes.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/charts/illnesstypes.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_chartjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-chartjs */ "./node_modules/vue-chartjs/es/index.js");
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  "extends": vue_chartjs__WEBPACK_IMPORTED_MODULE_0__["HorizontalBar"],
+  data: function data() {
+    return {
+      data: null,
+      nums: [],
+      lables: [],
+      options: {
+        tooltips: {},
+        legend: {
+          labels: {
+            // This more specific font property overrides the global property
+            fontColor: 'black'
+          }
+        }
+      }
+    };
+  },
+  props: {
+    styles: {
+      "color": "red"
+    }
+  },
+  methods: {
+    getData: function getData() {
+      var _this = this;
+
+      axios.get('/data/illtypes').then(function (rsp) {
+        console.log(rsp.data);
+        _this.data = rsp.data;
+
+        _this.data.forEach(function (element) {
+          _this.nums.push(element.total);
+        });
+
+        _this.data.forEach(function (element) {
+          _this.lables.push(Object.keys(element));
+        });
+
+        _this.lables = ["Anxiety Disorder (Generalized Social Phobia etc)", "Mood Disorder (Depression Bipolar Disorder etc)", "Psychotic Disorder (Schizophrenia Schizoaffective etc)", "Eating Disorder (Anorexia Bulimia etc)", "Attention Deficit Hyperactivity Disorder", "Obsessive-Compulsive Disorder", "Post-traumatic Stress Disorder", "Stress Response Syndromes", "Dissociative Disorder", "Substance Use Disorder", "Addictive Disorder"];
+
+        _this.renderC();
+      });
+    },
+    renderC: function renderC() {
+      var d = {
+        labels: this.lables,
+        lineTension: 5,
+        borderWidth: 100,
+        borderColor: '#F2A727',
+        pointBackgroundColor: '#F2A727',
+        backgroundColor: 'transparent',
+        datasets: [{
+          data: this.nums,
+          label: "Different types of illness",
+          backgroundColor: ["#5c53c6", "#59dafb", "#510013", "#aa7bff", "#e8597c", "#0054c9", "#ff85ee", "#2a1b4d", "#9da4ff", "#676b9e", "#676b9e"],
+          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)']
+        }]
+      };
+      console.log('Component render.');
+      this.renderChart(d, this.options);
+    }
+  },
+  mounted: function mounted() {
+    this.getData();
+    console.log('Component mounted.');
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/charts/poppie.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/charts/poppie.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_chartjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-chartjs */ "./node_modules/vue-chartjs/es/index.js");
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  "extends": vue_chartjs__WEBPACK_IMPORTED_MODULE_0__["Pie"],
+  data: function data() {
+    return {
+      data: null,
+      nums: [],
+      lables: [],
+      options: {
+        tooltips: {},
+        legend: {
+          labels: {
+            // This more specific font property overrides the global property
+            fontColor: 'black'
+          }
+        }
+      }
+    };
+  },
+  props: {
+    styles: {
+      "color": "red"
+    }
+  },
+  methods: {
+    getData: function getData() {
+      var _this = this;
+
+      axios.get('/data/pop').then(function (rsp) {
+        console.log(rsp.data);
+        _this.data = rsp.data;
+
+        _this.data.forEach(function (element) {
+          _this.nums.push(element.total);
+        });
+
+        _this.data.forEach(function (element) {
+          _this.lables.push(element.employeeCount);
+        });
+
+        _this.lables = ["Self Employed", "1-5", "6-25", "26-100", "100-500", "500-1000", "more than 1000"];
+        var total = 0;
+
+        _this.data.forEach(function (element) {
+          total += parseInt(element.total);
+        });
+
+        _this.data.forEach(function (element) {
+          element.total = Math.floor(element.total / total * 100);
+        });
+
+        _this.nums = [_this.data[0].total, _this.data[1].total, _this.data[3].total, _this.data[5].total, _this.data[2].total, _this.data[4].total, _this.data[6].total];
+
+        _this.renderC();
+      });
+    },
+    renderC: function renderC() {
+      var d = {
+        labels: this.lables,
+        lineTension: 5,
+        borderWidth: 100,
+        borderColor: '#F2A727',
+        pointBackgroundColor: '#F2A727',
+        backgroundColor: 'transparent',
+        datasets: [{
+          data: this.nums,
+          label: "Different types of illness",
+          backgroundColor: ["#5c53c6", "#59dafb", "#510013", "#aa7bff", "#e8597c", "#0054c9", "#ff85ee", "#2a1b4d", "#9da4ff", "#676b9e", "#676b9e"],
+          borderColor: []
+        }]
+      };
+      console.log('Component render.');
+      this.renderChart(d, this.options);
+    }
+  },
+  mounted: function mounted() {
+    this.getData();
+    console.log('Component mounted.');
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/graph.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/graph.vue?vue&type=script&lang=js& ***!
@@ -2302,14 +2628,19 @@ __webpack_require__.r(__webpack_exports__);
     return {
       data: null,
       nums: [],
-      lables: []
+      lables: [],
+      options: {
+        tooltips: {
+          enabled: false
+        }
+      }
     };
   },
   methods: {
     getData: function getData() {
       var _this = this;
 
-      axios.get('/data/pop').then(function (rsp) {
+      axios.get('/data/gender').then(function (rsp) {
         console.log(rsp.data);
         _this.data = rsp.data;
 
@@ -2320,9 +2651,6 @@ __webpack_require__.r(__webpack_exports__);
         _this.data.forEach(function (element) {
           _this.lables.push(element.employeeCount);
         });
-
-        _this.lables = ["Self Employed", "26-100", "100-500", "500-1000", "more than 1000"];
-        _this.nums = [_this.data[0].total, _this.data[2].total, _this.data[1].total, _this.data[3].total, _this.data[4].total];
 
         _this.renderC();
       });
@@ -2343,7 +2671,7 @@ __webpack_require__.r(__webpack_exports__);
         }]
       };
       console.log('Component render.');
-      this.renderChart(d);
+      this.renderChart(d, this.options);
     }
   },
   mounted: function mounted() {
@@ -120127,6 +120455,10 @@ Vue.component('app', __webpack_require__(/*! ./components/app.vue */ "./resource
 Vue.component('card', __webpack_require__(/*! ./components/card.vue */ "./resources/js/components/card.vue")["default"]);
 Vue.component('navbar', __webpack_require__(/*! ./components/navbar.vue */ "./resources/js/components/navbar.vue")["default"]);
 Vue.component('outertest', __webpack_require__(/*! ./components/outertest.vue */ "./resources/js/components/outertest.vue")["default"]);
+Vue.component('illnesstypes', __webpack_require__(/*! ./components/charts/illnesstypes.vue */ "./resources/js/components/charts/illnesstypes.vue")["default"]);
+Vue.component('poppie', __webpack_require__(/*! ./components/charts/poppie.vue */ "./resources/js/components/charts/poppie.vue")["default"]);
+Vue.component('genderbar', __webpack_require__(/*! ./components/charts/genderbar.vue */ "./resources/js/components/charts/genderbar.vue")["default"]);
+Vue.component('genderpie', __webpack_require__(/*! ./components/charts/genderpie.vue */ "./resources/js/components/charts/genderpie.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -120409,6 +120741,206 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/charts/genderbar.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/components/charts/genderbar.vue ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _genderbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./genderbar.vue?vue&type=script&lang=js& */ "./resources/js/components/charts/genderbar.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  _genderbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"],
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/charts/genderbar.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/charts/genderbar.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/charts/genderbar.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_genderbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./genderbar.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/charts/genderbar.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_genderbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/charts/genderpie.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/components/charts/genderpie.vue ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _genderpie_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./genderpie.vue?vue&type=script&lang=js& */ "./resources/js/components/charts/genderpie.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  _genderpie_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"],
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/charts/genderpie.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/charts/genderpie.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/charts/genderpie.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_genderpie_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./genderpie.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/charts/genderpie.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_genderpie_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/charts/illnesstypes.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/charts/illnesstypes.vue ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _illnesstypes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./illnesstypes.vue?vue&type=script&lang=js& */ "./resources/js/components/charts/illnesstypes.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  _illnesstypes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"],
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/charts/illnesstypes.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/charts/illnesstypes.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/charts/illnesstypes.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_illnesstypes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./illnesstypes.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/charts/illnesstypes.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_illnesstypes_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/charts/poppie.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/components/charts/poppie.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _poppie_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./poppie.vue?vue&type=script&lang=js& */ "./resources/js/components/charts/poppie.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  _poppie_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"],
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/charts/poppie.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/charts/poppie.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/charts/poppie.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_poppie_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./poppie.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/charts/poppie.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_poppie_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/graph.vue":
 /*!*******************************************!*\
   !*** ./resources/js/components/graph.vue ***!
@@ -120684,8 +121216,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\baltoslav-codejam\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\baltoslav-codejam\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\public_html\baltoslav-codejam\baltoslav\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\public_html\baltoslav-codejam\baltoslav\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
