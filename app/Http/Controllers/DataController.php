@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Data;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -187,8 +188,8 @@ class DataController extends Controller
      public function popcomp(){
 
         $p =  DB::table('mytable')
-                     ->select('selfEmployed', DB::raw('count(*) as total'))
-                     ->groupBy('selfEmployed')
+                     ->select('employeeCount', DB::raw('count(*) as total'))
+                     ->groupBy('employeeCount')
                      ->get();
     
         
@@ -199,7 +200,7 @@ class DataController extends Controller
             
 
         $r =  DB::table('mytable')
-                  ->select(['selfEmployed','opinionOnTechIndustrySupportingMentalHealth'])
+                  ->select(['employeeCount','opinionOnTechIndustrySupportingMentalHealth'])
                   ->get();
  
      
@@ -207,25 +208,21 @@ class DataController extends Controller
      $response = [];
 
      foreach($r as $x){
-        if($x->selfEmployed != null){
-            if(isset($response[$x->selfEmployed]) ){
+        if($x->employeeCount != null){
+            if(isset($response[$x->employeeCount]) ){
             
-                $response[$x->selfEmployed] += $x->opinionOnTechIndustrySupportingMentalHealth;
+                array_push($response[$x->employeeCount], $x->opinionOnTechIndustrySupportingMentalHealth);
             }else{
-                $response[$x->selfEmployed] = $x->opinionOnTechIndustrySupportingMentalHealth;
+                $response[$x->employeeCount] = [$x->opinionOnTechIndustrySupportingMentalHealth];
             } 
         }
         
 
      }
      $workers = [];
-     foreach($r as $x){
-         if($x->selfEmployed != null){
-            if(isset($workers[$x->selfEmployed]) ){
-                $workers[$x->selfEmployed] += 1;
-            }else{
-                $workers[$x->selfEmployed] = 1;
-            }
+     foreach($p as $x){
+         if($x->employeeCount != null){
+            $workers[$x->employeeCount] = $x->total;
          }
         
 
@@ -234,17 +231,49 @@ class DataController extends Controller
      foreach(array_keys($workers)  as $n){
         //var_dump($n);
          //$n["levelOfImportanceEmployerPlacesOnMentalHealth"] =  $n["levelOfImportanceEmployerPlacesOnMentalHealth"] /  $workers[$n["employeeCount"]];
-         var_dump($response[$n],$workers[$n]);
-        $response[$n] = $response[$n] /  $workers[$n];
+         //var_dump($response[$n],$workers[$n]);
+        //$response[$n] = $response[$n] /  $workers[$n];
+        $response[$n] = $this->getMedian($response[$n]);
         
 
         }
      
 
 
-     return $response;
+     return [$response,$workers,$p];
 
      }
+
+     function getMedian($arr) {
+        //Make sure it's an array.
+        if(!is_array($arr)){
+            throw new Exception('$arr must be an array!');
+        }
+        //If it's an empty array, return FALSE.
+        if(empty($arr)){
+            return false;
+        }
+        //Count how many elements are in the array.
+        $num = count($arr);
+        //Determine the middle value of the array.
+        $middleVal = floor(($num - 1) / 2);
+        //If the size of the array is an odd number,
+        //then the middle value is the median.
+        if($num % 2) { 
+            return $arr[$middleVal];
+        } 
+        //If the size of the array is an even number, then we
+        //have to get the two middle values and get their
+        //average
+        else {
+            //The $middleVal var will be the low
+            //end of the middle
+            $lowMid = $arr[$middleVal];
+            $highMid = $arr[$middleVal + 1];
+            //Return the average of the low and high.
+            return (($lowMid + $highMid) / 2);
+        }
+    }
 
 
 }
