@@ -240,7 +240,7 @@ class DataController extends Controller
      
 
 
-     return [$response,$workers,$p];
+     return [$response];
 
      }
 
