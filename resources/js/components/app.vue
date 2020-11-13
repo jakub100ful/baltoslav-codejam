@@ -75,6 +75,23 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row row-lg-4 justify-content-md-center">
+                <div class="col col-lg-10 m-5">
+                    <div class="card card-transparent">
+                        <div class="card-header">
+                            <h3 class="text-dark subtitle-text">Talking about mental health removes stigma.</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                "By talking about mental illness on a more regular basis, we as a society will hopefully unveil the false notions that plague this topic. When these myths are debunked, it should help remove the stigma surrounding mental health."
+                            </p>
+                            <a href="https://www.banyanmentalhealth.com/2018/08/01/why-talking-about-mental-health-is-so-important/">- Banyan Mental Health Program</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row row-lg-4 d-flex flex-row justify-content-md-center">
                 <div class="col col-lg-10 m-5">
                     <div class="card card-transparent">
@@ -105,34 +122,74 @@
                     </div>
                 </div>
             </div>
+            
             <div class="row row-lg-4 justify-content-md-center">
                 <div class="col col-lg-10 m-5">
                     <div class="card card-transparent">
                         <div class="card-header">
-                            <h3 class="text-dark subtitle-text">Talking about mental health removes stigma.</h3>
+                            <h3 class="text-dark subtitle-text">About a third of people did not have access to mental health care benefits.</h3>
                         </div>
                         <div class="card-body">
-                            <p>
-                                "By talking about mental illness on a more regular basis, we as a society will hopefully unveil the false notions that plague this topic. When these myths are debunked, it should help remove the stigma surrounding mental health."
-                            </p>
-                            <a href="https://www.banyanmentalhealth.com/2018/08/01/why-talking-about-mental-health-is-so-important/">- Banyan Mental Health Program</a>
+                            <div class="row">
+                                <div class="col">
+                                    <p>A quarter of people did not know if their employer provided any mental health support, infering poor indication from the employer.</p>
+                                    <providesbar />
+                                </div>
+                                <div class="col">
+                                    <p>A third of people who received mental health benefits from their employer, did not know how to access them.</p>
+                                    <knownbar/>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="row row-lg-4 justify-content-md-center">
                 <div class="col col-lg-10 m-5">
                     <div class="card card-transparent">
                         <div class="card-header">
-                            <h3 class="text-dark subtitle-text">Talking about mental health removes stigma.</h3>
+                            <h3 class="text-dark subtitle-text">Research has shown that people working in the tech industry are 5 times more likely to suffer from a mental health problem (BIMA, 2019).</h3>
                         </div>
                         <div class="card-body">
                             <p>
-                                "By talking about mental illness on a more regular basis, we as a society will hopefully unveil the false notions that plague this topic. When these myths are debunked, it should help remove the stigma surrounding mental health."
+                                The rapid growth of the sector with many attractive opportunities, 'long-hours' culture, and a predominantly younger less-experienced workforce all add to this.  
                             </p>
-                            <a href="https://www.banyanmentalhealth.com/2018/08/01/why-talking-about-mental-health-is-so-important/">- Banyan Mental Health Program</a>
                         </div>
                     </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container h-100" id="section-3">
+            <div class="row row-lg-4 justify-content-md-center mb-500">
+                <div class="col col-lg-10 m-5">
+                    <div class="card card-transparent">
+                        <div class="card-header">
+                            <h3 class="text-dark subtitle-text text-center">It all starts with a conversation.</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Another study produced by the Mental Health Foundation found 38% of people feared losing their job security and future prospects after speaking up about a mental health problem. Further 17% worried their colleagues would judge them for speaking up about these issues.
+                            </p>
+                            <h3 class="text-center">And let's not forget!</h3>
+                            <h5 class="text-center">Addressing wellbeing at work increases productivity by as much as 12%.</h5>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-lg-4 justify-content-md-center mb-500">
+                <div class="col col-lg-10 m-5">
+                    <div class="card card-transparent">
+                        <h5 class="text-dark subtitle-text text-center m-5">Let's start talking about our mental health, so that we can all feel better and produce better work together.</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center min-vh-100">
+                <div class="col col-lg text-light center-block">
+                    <h1 class="text-center display-1 title-text"><a href="https://www.youtube.com/watch?v=oHg5SJYRHA0" style="text-decoration: none;">Thank You:)</a></h1>
                 </div>
             </div>
         </div>
@@ -177,6 +234,7 @@
     import Graph from './graph.vue';
     import { ref, onMounted, onUnmounted } from 'vue';
 import Woulddiscussbar from './charts/woulddiscussbar.vue';
+import Knownbar from './charts/knownbar.vue';
 
     export default {
         setup() {
@@ -208,7 +266,7 @@ import Woulddiscussbar from './charts/woulddiscussbar.vue';
             }
         },
         
-        components: { card, Navbar, Graph, Woulddiscussbar },
+        components: { card, Navbar, Graph, Woulddiscussbar, Knownbar },
             data() {
                 return{
                     data: {},
