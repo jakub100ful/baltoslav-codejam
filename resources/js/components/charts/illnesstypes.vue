@@ -53,11 +53,11 @@
                     });
 
                     this.lables = [
-                        "Anxiety Disorder (Generalized Social Phobia etc)",
-                        "Mood Disorder (Depression Bipolar Disorder etc)",
-                        "Psychotic Disorder (Schizophrenia Schizoaffective etc)",
+                        "Anxiety Disorder",
+                        "Mood Disorder (Depression)",
+                        "Psychotic Disorder (Schizophrenia)",
                         "Eating Disorder (Anorexia Bulimia etc)",
-                        "Attention Deficit Hyperactivity Disorder",
+                        "Attention Deficit Disorder",
                         "Obsessive-Compulsive Disorder",
                         "Post-traumatic Stress Disorder",
                         "Stress Response Syndromes",

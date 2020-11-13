@@ -2585,7 +2585,7 @@ __webpack_require__.r(__webpack_exports__);
           _this.lables.push(Object.keys(element));
         });
 
-        _this.lables = ["Anxiety Disorder (Generalized Social Phobia etc)", "Mood Disorder (Depression Bipolar Disorder etc)", "Psychotic Disorder (Schizophrenia Schizoaffective etc)", "Eating Disorder (Anorexia Bulimia etc)", "Attention Deficit Hyperactivity Disorder", "Obsessive-Compulsive Disorder", "Post-traumatic Stress Disorder", "Stress Response Syndromes", "Dissociative Disorder", "Substance Use Disorder", "Addictive Disorder"];
+        _this.lables = ["Anxiety Disorder", "Mood Disorder (Depression)", "Psychotic Disorder (Schizophrenia)", "Eating Disorder (Anorexia Bulimia etc)", "Attention Deficit Disorder", "Obsessive-Compulsive Disorder", "Post-traumatic Stress Disorder", "Stress Response Syndromes", "Dissociative Disorder", "Substance Use Disorder", "Addictive Disorder"];
 
         _this.renderC();
       });
