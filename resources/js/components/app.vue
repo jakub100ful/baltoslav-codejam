@@ -20,13 +20,15 @@
                 <div class="col col-lg-10 m-5">
                     <div class="card card-transparent">
                         <div class="card-header">
-                            <h5>Let's have a look at the people surveyed</h5>
+                            <h5>Majority of respondents work at a company size of 100-500 people, but size doesn't matter.</h5>
+                            <h6>We also thought it was important to cover gender of the respondents, because of the well-known divide in the tech industry.</h6>
                             <button class="btn btn-light" @click="demographics = 'pop'; k+= 1" >Population of the company</button>
                             <button class="btn btn-light" @click="demographics = 'gender'; k+= 1" >Gender</button>
                         </div>
                         <div class="card-body">
 
                                 <div class="row" v-if="demographics == 'pop'">
+                                    <p class="p-3">The different charts show a range of company sizes. We also found that mental health issues are a systemic problem, and therefore there was no correlation between the company size and substance of mental health issues.</p>
                                     <div class="col">
                                         <test :key="k" />
                                     </div>
@@ -36,6 +38,7 @@
                                 </div>
 
                                 <div class="row" v-if="demographics == 'gender'">
+                                    <p class="p-3">Majority of respondents were men, although a substantial amount of women and other gender categories participated in the survey.</p>
                                     <div class="col">
                                         <genderbar :key="k" />
                                     </div>
@@ -79,7 +82,7 @@
                                 <h5>Most people have not had a conversation about their mental health, but people are willing to!</h5>
                                 <button class="btn btn-light" @click="discussions = 'bar'; k+= 1" >Bar Chart</button>
                                 <button class="btn btn-light" @click="discussions = 'pie'; k+= 1" >Pie Chart</button>
-                            </div>
+                        </div>
                         <div class="card-body">
                             <div class="row" v-if="discussions == 'bar'">
                                 <div class="col">
@@ -98,7 +101,6 @@
                                     <woulddiscusspie/>
                                 </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                 </div>

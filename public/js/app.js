@@ -2118,6 +2118,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -108508,7 +108510,17 @@ var render = function() {
           _c("div", { staticClass: "col col-lg-10 m-5" }, [
             _c("div", { staticClass: "card card-transparent" }, [
               _c("div", { staticClass: "card-header" }, [
-                _c("h5", [_vm._v("Let's have a look at the people surveyed")]),
+                _c("h5", [
+                  _vm._v(
+                    "Majority of respondents work at a company size of 100-500 people, but size doesn't matter."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("h6", [
+                  _vm._v(
+                    "We also thought it was important to cover gender of the respondents, because of the well-known divide in the tech industry."
+                  )
+                ]),
                 _vm._v(" "),
                 _c(
                   "button",
@@ -108542,6 +108554,12 @@ var render = function() {
               _c("div", { staticClass: "card-body" }, [
                 _vm.demographics == "pop"
                   ? _c("div", { staticClass: "row" }, [
+                      _c("p", { staticClass: "p-3" }, [
+                        _vm._v(
+                          "The different charts show a range of company sizes. We also found that mental health issues are a systemic problem, and therefore there was no correlation between the company size and substance of mental health issues."
+                        )
+                      ]),
+                      _vm._v(" "),
                       _c(
                         "div",
                         { staticClass: "col" },
@@ -108560,6 +108578,12 @@ var render = function() {
                 _vm._v(" "),
                 _vm.demographics == "gender"
                   ? _c("div", { staticClass: "row" }, [
+                      _c("p", { staticClass: "p-3" }, [
+                        _vm._v(
+                          "Majority of respondents were men, although a substantial amount of women and other gender categories participated in the survey."
+                        )
+                      ]),
+                      _vm._v(" "),
                       _c(
                         "div",
                         { staticClass: "col" },
@@ -108689,12 +108713,12 @@ var render = function() {
             ])
           ])
         ]
-      )
-    ]),
-    _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
-    _vm._m(4)
+      ),
+      _vm._v(" "),
+      _vm._m(3),
+      _vm._v(" "),
+      _vm._m(4)
+    ])
   ])
 }
 var staticRenderFns = [
@@ -122238,7 +122262,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/Clouds.png?2481e7ca608698be7150746a82ece286";
+module.exports = "/images/Clouds.png?b36eae671b1acd276ad834795bfa6ddd";
 
 /***/ }),
 
@@ -122249,8 +122273,8 @@ module.exports = "/images/Clouds.png?2481e7ca608698be7150746a82ece286";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\public_html\baltoslav-codejam\baltoslav\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\public_html\baltoslav-codejam\baltoslav\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\codejam\baltoslav-codejam\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\codejam\baltoslav-codejam\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
