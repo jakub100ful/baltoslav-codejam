@@ -122675,7 +122675,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/Clouds.png?b36eae671b1acd276ad834795bfa6ddd";
+module.exports = "/images/Clouds.png?2481e7ca608698be7150746a82ece286";
 
 /***/ }),
 
@@ -122686,8 +122686,8 @@ module.exports = "/images/Clouds.png?b36eae671b1acd276ad834795bfa6ddd";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\codejam\baltoslav-codejam\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\codejam\baltoslav-codejam\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\public_html\baltoslav-codejam\baltoslav\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\public_html\baltoslav-codejam\baltoslav\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
