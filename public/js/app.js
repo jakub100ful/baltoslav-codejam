@@ -2013,6 +2013,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -23396,7 +23401,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.row-m-t[data-v-f9a0fcb4]{\r\n  margin-top : 50px\n}\r\n", ""]);
+exports.push([module.i, "\n.row-m-t[data-v-f9a0fcb4]{\r\n  margin-top : 50px\n}\n.body-container[data-v-f9a0fcb4] {\r\n    background-image: \"storage\\Apppublic\\Clouds.png\";\r\n    background-size: 100%;\n}\r\n", ""]);
 
 // exports
 
@@ -108077,7 +108082,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
+  return _c("div", { staticClass: "container-fluid body-container" }, [
     _vm._m(0),
     _vm._v(" "),
     _vm._m(1),
@@ -121408,8 +121413,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\public_html\baltoslav-codejam\baltoslav\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\public_html\baltoslav-codejam\baltoslav\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\codejam\baltoslav-codejam\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\codejam\baltoslav-codejam\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid body-container">
         <div class="row row-lg-4 align-items-center h-100">
             <div class="col col-lg">
                 <h1 class="text-center display-1">Dear Tech Companies...</h1>
@@ -61,6 +61,11 @@
 <style scoped>
 .row-m-t{
   margin-top : 50px
+}
+
+.body-container {
+    background-image: "storage\app\public\Clouds.png";
+    background-size: 100%;
 }
 </style>
 
