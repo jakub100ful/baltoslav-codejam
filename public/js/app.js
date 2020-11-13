@@ -23694,7 +23694,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@200;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "\n.row-m-t[data-v-f9a0fcb4]{\r\n  margin-top : 50px\n}\n.body-container[data-v-f9a0fcb4] {\r\n    background: url(" + escape(__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../../../storage/app/public/Clouds.png'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()))) + ");\r\n    background-size: 100%;\r\n    background-repeat: no-repeat;\r\n    background-attachment: fixed;\r\n    scroll-behavior: smooth;\n}\n.title-text[data-v-f9a0fcb4] {\r\n    font-family: 'Raleway', sans-serif;\r\n    font-weight: 800;\r\n    text-shadow: 2px 2px black;\n}\n.subtitle-text[data-v-f9a0fcb4] {\r\n    font-family: 'Raleway', sans-serif;\r\n    font-weight: 200;\n}\n.card-transparent[data-v-f9a0fcb4] {\r\n    background-color: rgba(245, 245, 245, 0.4);\n}\r\n", ""]);
+exports.push([module.i, "\n.row-m-t[data-v-f9a0fcb4]{\r\n  margin-top : 50px\n}\n.body-container[data-v-f9a0fcb4] {\r\n    background: url(" + escape(__webpack_require__(/*! ../../../storage/app/public/Clouds.png */ "./storage/app/public/Clouds.png")) + ");\r\n    background-size: 100%;\r\n    background-repeat: no-repeat;\r\n    background-attachment: fixed;\r\n    scroll-behavior: smooth;\n}\n.title-text[data-v-f9a0fcb4] {\r\n    font-family: 'Raleway', sans-serif;\r\n    font-weight: 800;\r\n    text-shadow: 2px 2px black;\n}\n.subtitle-text[data-v-f9a0fcb4] {\r\n    font-family: 'Raleway', sans-serif;\r\n    font-weight: 200;\n}\n.card-transparent[data-v-f9a0fcb4] {\r\n    background-color: rgba(245, 245, 245, 0.4);\n}\r\n", ""]);
 
 // exports
 
@@ -121970,6 +121970,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./storage/app/public/Clouds.png":
+/*!***************************************!*\
+  !*** ./storage/app/public/Clouds.png ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/Clouds.png?2481e7ca608698be7150746a82ece286";
+
+/***/ }),
+
 /***/ 0:
 /*!*************************************************************!*\
   !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
@@ -121977,8 +121988,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\codejam\baltoslav-codejam\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\codejam\baltoslav-codejam\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\public_html\baltoslav-codejam\baltoslav\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\public_html\baltoslav-codejam\baltoslav\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
