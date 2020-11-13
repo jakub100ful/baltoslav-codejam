@@ -310,7 +310,7 @@ class DataController extends Controller
 
         $k = "Yes";
         foreach($d as $x){
-            if($x->mentalHealthEverDiscussedWithEmployer != null){
+            if($x->mentalHealthEverDiscussedWithEmployer == null  ){
                if($x->lessLikelyToRevealIssueInWorkPlaceAfterObservingDiscussion == "Yes" ){
                 $k = "No";
                }else if($x->lessLikelyToRevealIssueInWorkPlaceAfterObservingDiscussion == "No"){
@@ -318,8 +318,9 @@ class DataController extends Controller
                }else if($x->lessLikelyToRevealIssueInWorkPlaceAfterObservingDiscussion == "Maybe"){
                 $k = "Maybe";
                }
+               $wouldDiscuss[$k] += 1;
             }
-            $wouldDiscuss[$k] += 1;
+            
 
         }
 
