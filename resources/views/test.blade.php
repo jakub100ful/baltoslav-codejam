@@ -18,7 +18,7 @@
     </head>
     <body>  
         <div id="app">
-                <havediscussedpie/>
+                <woulddiscussbar/>
         </div>
     </body>
 </html>
