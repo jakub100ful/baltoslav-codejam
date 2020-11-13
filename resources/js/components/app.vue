@@ -5,7 +5,6 @@
                 <div class="col col-lg shadow-lg text-light center-block">
                     <h1 class="text-center display-1 title-text">Dear Tech Companies...</h1>
                     <h1 class="text-center subtitle-text">we need to have a discussion about mental health</h1>
-                    <a class="btn btn-light m-3" href="#section-2" role="button">Start</a>
                 </div>
             </div>
         </div>
@@ -18,7 +17,7 @@
                 </div>
             </div>
             <div class="row row-lg-4 d-flex flex-row justify-content-md-center">
-                <div class="col col-lg-10">
+                <div class="col col-lg-10 m-5">
                     <div class="card card-transparent">
                         <div class="card-header">
                             <h5>Demographics of the people asked</h5>
@@ -26,17 +25,25 @@
                             <button class="btn btn-light" @click="demographics = 'gender'; k+= 1" >Gender</button>
                         </div>
                         <div class="card-body">
-                            <div class="row">
-                                    <div class="col-8" v-if="demographics == 'pop'">
-                                        <test :key="k" />
-                                        <poppie :key="k"/>
+
+                                    <div class="row" v-if="demographics == 'pop'">
+                                        <div class="col">
+                                            <test :key="k" />
+                                        </div>
+                                        <div class="col">
+                                            <poppie :key="k"/>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-8" v-if="demographics == 'gender'">
+
+                                <div class="row" v-if="demographics == 'gender'">
+                                    <div class="col">
                                         <genderbar :key="k" />
-                                    <genderpie :key="k"/>
+                                    </div>
+                                    <div class="col">
+                                        <genderpie :key="k"/>
+                                    </div>    
                                 </div>
-                            </div>
+
                             
                             
                             
@@ -44,8 +51,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row row-lg-4 d-flex flex-row justify-content-md-center">
-                <div class="col col-lg-6">
+            <div class="row row-lg-10 d-flex flex-row justify-content-md-center">
+                <div class="col col-lg-10 m-5">
                     <div class="row-center">
                         <div class="card">
                             <div class="card-header align-self-center">
@@ -90,7 +97,7 @@
 }
 
 .card-transparent {
-    background-color: rgba(245, 245, 245, 0.4);
+    background-color: rgba(245, 245, 245, 0.9);
 }
 </style>
 
