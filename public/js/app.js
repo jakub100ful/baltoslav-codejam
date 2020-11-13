@@ -2518,7 +2518,7 @@ __webpack_require__.r(__webpack_exports__);
 
         _this.data.forEach(function (element) {
           console.log(element.total);
-          newnum.push(parseInt(element.total) / _this.total * 100);
+          newnum.push(Math.round(parseInt(element.total) / _this.total * 100));
         });
 
         _this.data.forEach(function (element) {
@@ -2541,7 +2541,7 @@ __webpack_require__.r(__webpack_exports__);
         datasets: [{
           data: this.nums,
           label: "Different types of illness",
-          backgroundColor: ['rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)', 'rgba(255, 206, 86, 0.8)', 'rgba(75, 192, 192, 0.8)', 'rgba(153, 102, 255, 0.8)', 'rgba(255, 159, 64, 0.8)', 'rgba(242, 140, 70, 0.8)'],
+          backgroundColor: ["#5c53c6", "#59dafb", "#510013", "#aa7bff", "#e8597c", "#0054c9", "#ff85ee", "#2a1b4d", "#9da4ff", "#676b9e", "#676b9e"],
           borderColor: []
         }]
       };
@@ -2609,7 +2609,7 @@ __webpack_require__.r(__webpack_exports__);
           _this.lables.push(Object.keys(element));
         });
 
-        _this.lables = ["Anxiety Disorder (Generalized Social Phobia etc)", "Mood Disorder (Depression Bipolar Disorder etc)", "Psychotic Disorder (Schizophrenia Schizoaffective etc)", "Eating Disorder (Anorexia Bulimia etc)", "Attention Deficit Hyperactivity Disorder", "Obsessive-Compulsive Disorder", "Post-traumatic Stress Disorder", "Stress Response Syndromes", "Dissociative Disorder", "Substance Use Disorder", "Addictive Disorder"];
+        _this.lables = ["Anxiety Disorder", "Mood Disorder (Depression)", "Psychotic Disorder (Schizophrenia)", "Eating Disorder (Anorexia Bulimia etc)", "Attention Deficit Disorder", "Obsessive-Compulsive Disorder", "Post-traumatic Stress Disorder", "Stress Response Syndromes", "Dissociative Disorder", "Substance Use Disorder", "Addictive Disorder"];
 
         _this.renderC();
       });
