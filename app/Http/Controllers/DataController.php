@@ -187,8 +187,8 @@ class DataController extends Controller
      public function popcomp(){
 
         $p =  DB::table('mytable')
-                     ->select('employeeCount', DB::raw('count(*) as total'))
-                     ->groupBy('employeeCount')
+                     ->select('selfEmployed', DB::raw('count(*) as total'))
+                     ->groupBy('selfEmployed')
                      ->get();
     
         
@@ -199,7 +199,7 @@ class DataController extends Controller
             
 
         $r =  DB::table('mytable')
-                  ->select(['employeeCount','levelOfImportanceEmployerPlacesOnMentalHealth'])
+                  ->select(['selfEmployed','opinionOnTechIndustrySupportingMentalHealth'])
                   ->get();
  
      
@@ -207,12 +207,12 @@ class DataController extends Controller
      $response = [];
 
      foreach($r as $x){
-        if($x->employeeCount != null){
-            if(isset($response[$x->employeeCount]) ){
+        if($x->selfEmployed != null){
+            if(isset($response[$x->selfEmployed]) ){
             
-                $response[$x->employeeCount] += $x->levelOfImportanceEmployerPlacesOnMentalHealth;
+                $response[$x->selfEmployed] += $x->opinionOnTechIndustrySupportingMentalHealth;
             }else{
-                $response[$x->employeeCount] = $x->levelOfImportanceEmployerPlacesOnMentalHealth;
+                $response[$x->selfEmployed] = $x->opinionOnTechIndustrySupportingMentalHealth;
             } 
         }
         
@@ -220,11 +220,11 @@ class DataController extends Controller
      }
      $workers = [];
      foreach($r as $x){
-         if($x->employeeCount != null){
-            if(isset($workers[$x->employeeCount]) ){
-                $workers[$x->employeeCount] += 1;
+         if($x->selfEmployed != null){
+            if(isset($workers[$x->selfEmployed]) ){
+                $workers[$x->selfEmployed] += 1;
             }else{
-                $workers[$x->employeeCount] = 1;
+                $workers[$x->selfEmployed] = 1;
             }
          }
         
@@ -234,7 +234,10 @@ class DataController extends Controller
      foreach(array_keys($workers)  as $n){
         //var_dump($n);
          //$n["levelOfImportanceEmployerPlacesOnMentalHealth"] =  $n["levelOfImportanceEmployerPlacesOnMentalHealth"] /  $workers[$n["employeeCount"]];
+         var_dump($response[$n],$workers[$n]);
         $response[$n] = $response[$n] /  $workers[$n];
+        
+
         }
      
 
