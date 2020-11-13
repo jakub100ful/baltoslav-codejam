@@ -2494,7 +2494,7 @@ __webpack_require__.r(__webpack_exports__);
 
         _this.data.forEach(function (element) {
           console.log(element.total);
-          newnum.push(parseInt(element.total) / _this.total * 100);
+          newnum.push(Math.round(parseInt(element.total) / _this.total * 100));
         });
 
         _this.data.forEach(function (element) {
@@ -2517,7 +2517,7 @@ __webpack_require__.r(__webpack_exports__);
         datasets: [{
           data: this.nums,
           label: "Different types of illness",
-          backgroundColor: ['rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)', 'rgba(255, 206, 86, 0.8)', 'rgba(75, 192, 192, 0.8)', 'rgba(153, 102, 255, 0.8)', 'rgba(255, 159, 64, 0.8)', 'rgba(242, 140, 70, 0.8)'],
+          backgroundColor: ["#5c53c6", "#59dafb", "#510013", "#aa7bff", "#e8597c", "#0054c9", "#ff85ee", "#2a1b4d", "#9da4ff", "#676b9e", "#676b9e"],
           borderColor: []
         }]
       };
@@ -122005,7 +122005,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/img-loader/index.js):\nError: ENOENT: no such file or directory, open 'C:\\xampp\\htdocs\\codejam\\baltoslav-codejam\\storage\\app\\public\\Clouds.png'");
+module.exports = "/images/Clouds.png?2481e7ca608698be7150746a82ece286";
 
 /***/ }),
 
@@ -122016,8 +122016,8 @@ throw new Error("Module build failed (from ./node_modules/img-loader/index.js):\
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\codejam\baltoslav-codejam\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\codejam\baltoslav-codejam\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\public_html\baltoslav-codejam\baltoslav\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\public_html\baltoslav-codejam\baltoslav\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

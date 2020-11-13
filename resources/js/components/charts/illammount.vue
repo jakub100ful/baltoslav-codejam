@@ -54,7 +54,7 @@
 
                     this.data.forEach(element => {
                         console.log(element.total);
-                        newnum.push((parseInt(element.total) / this.total) * 100);
+                        newnum.push(Math.round((parseInt(element.total) / this.total) * 100));
                     });
 
                    
@@ -91,13 +91,17 @@
                         data: this.nums,
                         label: "Different types of illness",
                         backgroundColor: [
-                            'rgba(255, 99, 132, 0.8)',
-                            'rgba(54, 162, 235, 0.8)',
-                            'rgba(255, 206, 86, 0.8)',
-                            'rgba(75, 192, 192, 0.8)',
-                            'rgba(153, 102, 255, 0.8)',
-                            'rgba(255, 159, 64, 0.8)',
-                            'rgba(242, 140, 70, 0.8)'
+                            "#5c53c6",
+                            "#59dafb",
+                            "#510013",
+                            "#aa7bff",
+                            "#e8597c",
+                            "#0054c9",
+                            "#ff85ee",
+                            "#2a1b4d",
+                            "#9da4ff",
+                            "#676b9e",
+                            "#676b9e"
                         ],
                         borderColor: [
                             
