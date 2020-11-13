@@ -30,4 +30,5 @@ Route::get('/data/illtypes', [DataController::class, 'illtypes']);
 Route::get('/data/gender', [DataController::class, 'gender']);
 Route::get('/data/popcomp', [DataController::class, 'popcomp']);
 Route::get('/data/ever', [DataController::class, 'everDisscussed']);
+Route::get('/data/concerns', [DataController::class, 'concerns']);
 

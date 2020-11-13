@@ -332,5 +332,40 @@ class DataController extends Controller
         ];
     }
 
+    public function concerns(){
+        $d =  DB::table('mytable')
+                 ->select('employerProvidesMentalHealthBenefits', DB::raw('count(*) as total'))
+                 ->groupBy('employerProvidesMentalHealthBenefits')
+                 ->get();
+
+                   $results =  [
+                    "I don't know" => $d[1]->total,
+                    "No" => $d[0]->total + $d[2]->total,
+                    "Not eligible for coverage / NA" =>$d[3]->total,
+                    "Yes" => $d[4]->total,
+                 ];
+
+                 $d =  DB::table('mytable')
+                 ->select('mentalHealthCareOptionsKnown', DB::raw('count(*) as total'))->where('employerProvidesMentalHealthBenefits','Yes')
+                 ->groupBy('mentalHealthCareOptionsKnown')
+                 ->get();
+                
+                 $know =  [
+                    "No" => $d[1]->total + $d[0]->total,
+                    "Yes" => $d[2]->total,
+                 ];
+
+
+    
+
+
+        
+    
+        return [
+            "provides" => $results,
+            "knowCare" => $know,
+        ];
+    }
+
 
 }
