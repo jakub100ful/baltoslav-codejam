@@ -109045,10 +109045,8 @@ var staticRenderFns = [
               _c(
                 "a",
                 {
-                  attrs: {
-                    href:
-                      "https://www.banyanmentalhealth.com/2018/08/01/why-talking-about-mental-health-is-so-important/"
-                  }
+                  staticStyle: { "text-decoration": "none" },
+                  attrs: { href: "https://www.youtube.com/watch?v=oHg5SJYRHA0" }
                 },
                 [_vm._v("- Banyan Mental Health Program")]
               )
@@ -109167,14 +109165,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "row align-items-center min-vh-100" }, [
           _c("div", { staticClass: "col col-lg text-light center-block" }, [
             _c("h1", { staticClass: "text-center display-1 title-text" }, [
-              _c(
-                "a",
-                {
-                  staticStyle: { "text-decoration": "none" },
-                  attrs: { href: "https://www.youtube.com/watch?v=oHg5SJYRHA0" }
-                },
-                [_vm._v("Thank You:)")]
-              )
+              _vm._v("Thank You:)")
             ])
           ])
         ])

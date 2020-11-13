@@ -86,7 +86,7 @@
                             <p>
                                 "By talking about mental illness on a more regular basis, we as a society will hopefully unveil the false notions that plague this topic. When these myths are debunked, it should help remove the stigma surrounding mental health."
                             </p>
-                            <a href="https://www.banyanmentalhealth.com/2018/08/01/why-talking-about-mental-health-is-so-important/">- Banyan Mental Health Program</a>
+                            <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0" style="text-decoration: none;">- Banyan Mental Health Program</a>
                         </div>
                     </div>
                 </div>
@@ -189,7 +189,7 @@
             </div>
             <div class="row align-items-center min-vh-100">
                 <div class="col col-lg text-light center-block">
-                    <h1 class="text-center display-1 title-text"><a href="https://www.youtube.com/watch?v=oHg5SJYRHA0" style="text-decoration: none;">Thank You:)</a></h1>
+                    <h1 class="text-center display-1 title-text">Thank You:)</h1>
                 </div>
             </div>
         </div>
