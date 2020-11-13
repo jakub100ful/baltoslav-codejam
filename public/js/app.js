@@ -2043,6 +2043,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2205,7 +2212,7 @@ __webpack_require__.r(__webpack_exports__);
         datasets: [{
           data: this.nums,
           label: "Size of company the person works at",
-          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+          backgroundColor: ['rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)', 'rgba(255, 206, 86, 0.8)', 'rgba(75, 192, 192, 0.8)', 'rgba(153, 102, 255, 0.8)', 'rgba(255, 159, 64, 0.8)'],
           borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)']
         }]
       };
@@ -2277,7 +2284,7 @@ __webpack_require__.r(__webpack_exports__);
         datasets: [{
           data: this.nums,
           label: "Size of company the person works at",
-          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+          backgroundColor: ['rgba(255, 99, 132, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(255, 206, 86, 0.5)', 'rgba(75, 192, 192, 0.5)', 'rgba(153, 102, 255, 0.5)', 'rgba(255, 159, 64, 0.5)'],
           borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)']
         }]
       };
@@ -2674,7 +2681,7 @@ __webpack_require__.r(__webpack_exports__);
         datasets: [{
           data: this.nums,
           label: "Different types of illness",
-          backgroundColor: ["#5c53c6", "#59dafb", "#510013", "#aa7bff", "#e8597c", "#0054c9", "#ff85ee", "#2a1b4d", "#9da4ff", "#676b9e", "#676b9e"],
+          backgroundColor: ['rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)', 'rgba(255, 206, 86, 0.8)', 'rgba(75, 192, 192, 0.8)', 'rgba(153, 102, 255, 0.8)', 'rgba(255, 159, 64, 0.8)', 'rgba(242, 140, 70, 0.8)'],
           borderColor: []
         }]
       };
@@ -23694,7 +23701,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@200;800&display=swap);", ""]);
 
 // module
-exports.push([module.i, "\n.row-m-t[data-v-f9a0fcb4]{\r\n  margin-top : 50px\n}\n.body-container[data-v-f9a0fcb4] {\r\n    background: url(" + escape(__webpack_require__(/*! ../../../storage/app/public/Clouds.png */ "./storage/app/public/Clouds.png")) + ");\r\n    background-size: 100%;\r\n    background-repeat: no-repeat;\r\n    background-attachment: fixed;\r\n    scroll-behavior: smooth;\n}\n.title-text[data-v-f9a0fcb4] {\r\n    font-family: 'Raleway', sans-serif;\r\n    font-weight: 800;\r\n    text-shadow: 2px 2px black;\n}\n.subtitle-text[data-v-f9a0fcb4] {\r\n    font-family: 'Raleway', sans-serif;\r\n    font-weight: 200;\n}\n.card-transparent[data-v-f9a0fcb4] {\r\n    background-color: rgba(245, 245, 245, 0.4);\n}\r\n", ""]);
+exports.push([module.i, "\n.row-m-t[data-v-f9a0fcb4]{\r\n  margin-top : 50px\n}\n.body-container[data-v-f9a0fcb4] {\r\n    background: url(" + escape(__webpack_require__(/*! ../../../storage/app/public/Clouds.png */ "./storage/app/public/Clouds.png")) + ");\r\n    background-size: 100%;\r\n    background-repeat: no-repeat;\r\n    background-attachment: fixed;\r\n    scroll-behavior: smooth;\n}\n.title-text[data-v-f9a0fcb4] {\r\n    font-family: 'Raleway', sans-serif;\r\n    font-weight: 800;\r\n    text-shadow: 2px 2px black;\n}\n.subtitle-text[data-v-f9a0fcb4] {\r\n    font-family: 'Raleway', sans-serif;\r\n    font-weight: 200;\n}\n.card-transparent[data-v-f9a0fcb4] {\r\n    background-color: rgba(245, 245, 245, 0.9);\n}\r\n", ""]);
 
 // exports
 
@@ -108414,7 +108421,7 @@ var render = function() {
           staticClass: "row row-lg-4 d-flex flex-row justify-content-md-center"
         },
         [
-          _c("div", { staticClass: "col col-lg-10" }, [
+          _c("div", { staticClass: "col col-lg-10 m-5" }, [
             _c("div", { staticClass: "card card-transparent" }, [
               _c("div", { staticClass: "card-header" }, [
                 _c("h5", [_vm._v("Demographics of the people asked")]),
@@ -108449,60 +108456,70 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "row" }, [
-                  _vm.demographics == "pop"
-                    ? _c(
+                _vm.demographics == "pop"
+                  ? _c("div", { staticClass: "row" }, [
+                      _c(
                         "div",
-                        { staticClass: "col-8" },
-                        [
-                          _c("test", { key: _vm.k }),
-                          _vm._v(" "),
-                          _c("poppie", { key: _vm.k })
-                        ],
+                        { staticClass: "col" },
+                        [_c("test", { key: _vm.k })],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col" },
+                        [_c("poppie", { key: _vm.k })],
                         1
                       )
-                    : _vm._e()
-                ]),
+                    ])
+                  : _vm._e(),
                 _vm._v(" "),
                 _vm.demographics == "gender"
-                  ? _c(
-                      "div",
-                      { staticClass: "col-8" },
-                      [
-                        _c("genderbar", { key: _vm.k }),
-                        _vm._v(" "),
-                        _c("genderpie", { key: _vm.k })
-                      ],
-                      1
-                    )
+                  ? _c("div", { staticClass: "row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "col" },
+                        [_c("genderbar", { key: _vm.k })],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "col" },
+                        [_c("genderpie", { key: _vm.k })],
+                        1
+                      )
+                    ])
                   : _vm._e()
               ])
             ])
           ])
         ]
-      )
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row row-lg-4 d-flex flex-row justify-content-md-center" },
-      [
-        _c("div", { staticClass: "col col-lg-6" }, [
-          _c("div", { staticClass: "row-center" }, [
-            _c("div", { staticClass: "card" }, [
-              _vm._m(2),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "card-body" },
-                [_c("illammount"), _vm._v(" "), _c("illnesstypes")],
-                1
-              )
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "row row-lg-10 d-flex flex-row justify-content-md-center"
+        },
+        [
+          _c("div", { staticClass: "col col-lg-10 m-5" }, [
+            _c("div", { staticClass: "row-center" }, [
+              _c("div", { staticClass: "card" }, [
+                _vm._m(2),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "card-body" },
+                  [_c("illammount"), _vm._v(" "), _c("illnesstypes")],
+                  1
+                )
+              ])
             ])
           ])
-        ])
-      ]
-    )
+        ]
+      )
+    ])
   ])
 }
 var staticRenderFns = [
@@ -108528,16 +108545,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("h1", { staticClass: "text-center subtitle-text" }, [
                 _vm._v("we need to have a discussion about mental health")
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "btn btn-light m-3",
-                  attrs: { href: "#section-2", role: "button" }
-                },
-                [_vm._v("Start")]
-              )
+              ])
             ]
           )
         ])
