@@ -39,10 +39,8 @@
                     
 
                     this.data.forEach(element => {
-                        this.lables.push(element.employeeCount);
+                        this.lables.push(element.gender);
                     });
-
-                    
 
                     
                     this.renderC();

@@ -2,12 +2,12 @@
 
 <script>
 
-   import {Bar} from 'vue-chartjs';
+   import {Pie} from 'vue-chartjs';
 
 
 
     export default {
-        extends: Bar,
+        extends: Pie,
         data(){
             return{
                 data: null,
@@ -15,6 +15,8 @@
                 lables: [],
 
                 options:{
+                    cutoutPercentage: 50,
+                    
                    tooltips:{
                         enabled: false,
                    }
@@ -39,10 +41,8 @@
                     
 
                     this.data.forEach(element => {
-                        this.lables.push(element.employeeCount);
+                        this.lables.push(element.gender);
                     });
-
-                    
 
                     
                     this.renderC();

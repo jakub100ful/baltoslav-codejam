@@ -175,5 +175,14 @@ class DataController extends Controller
 
     }
 
+    public function gender(){
+        $r =  DB::table('mytable')
+                  ->select('gender', DB::raw('count(*) as total'))
+                  ->groupBy('gender')
+                  ->get();
+ 
+     return $r;
+     }
+
 
 }

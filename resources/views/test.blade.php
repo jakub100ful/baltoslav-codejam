@@ -18,7 +18,7 @@
     </head>
     <body>  
         <div id="app">
-                <illnesstypes/>
+                <genderpie/>
         </div>
     </body>
 </html>
