@@ -2050,6 +2050,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2511,7 +2517,7 @@ __webpack_require__.r(__webpack_exports__);
         datasets: [{
           data: this.nums,
           label: "Different types of illness",
-          backgroundColor: ["#5c53c6", "#59dafb", "#510013", "#aa7bff", "#e8597c", "#0054c9", "#ff85ee", "#2a1b4d", "#9da4ff", "#676b9e", "#676b9e"],
+          backgroundColor: ['rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)', 'rgba(255, 206, 86, 0.8)', 'rgba(75, 192, 192, 0.8)', 'rgba(153, 102, 255, 0.8)', 'rgba(255, 159, 64, 0.8)', 'rgba(242, 140, 70, 0.8)'],
           borderColor: []
         }]
       };
@@ -108521,12 +108527,13 @@ var render = function() {
               _c("div", { staticClass: "card" }, [
                 _vm._m(2),
                 _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "card-body" },
-                  [_c("illammount"), _vm._v(" "), _c("illnesstypes")],
-                  1
-                )
+                _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col" }, [_c("illammount")], 1),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col" }, [_c("illnesstypes")], 1)
+                  ])
+                ])
               ])
             ])
           ])
@@ -108592,7 +108599,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "card-header align-self-center" }, [
       _c("h3", [
         _vm._v(
-          "67% of people identified themselves to have had a mental health illness at some point"
+          "63.2% of people identified themselves to have had, or think they had a mental health illness at some point."
         )
       ])
     ])
@@ -121998,7 +122005,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/Clouds.png?2481e7ca608698be7150746a82ece286";
+throw new Error("Module build failed (from ./node_modules/img-loader/index.js):\nError: ENOENT: no such file or directory, open 'C:\\xampp\\htdocs\\codejam\\baltoslav-codejam\\storage\\app\\public\\Clouds.png'");
 
 /***/ }),
 
@@ -122009,8 +122016,8 @@ module.exports = "/images/Clouds.png?2481e7ca608698be7150746a82ece286";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\public_html\baltoslav-codejam\baltoslav\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\public_html\baltoslav-codejam\baltoslav\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\codejam\baltoslav-codejam\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\codejam\baltoslav-codejam\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

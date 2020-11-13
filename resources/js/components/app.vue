@@ -56,11 +56,17 @@
                     <div class="row-center">
                         <div class="card">
                             <div class="card-header align-self-center">
-                                <h3>67% of people identified themselves to have had a mental health illness at some point</h3>
+                                <h3>63.2% of people identified themselves to have had, or think they had a mental health illness at some point.</h3>
                             </div>
                             <div class="card-body">
-                                <illammount/>
-                                <illnesstypes/>
+                                <div class="row">
+                                    <div class="col">
+                                        <illammount/>
+                                    </div>
+                                    <div class="col">
+                                        <illnesstypes/>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
