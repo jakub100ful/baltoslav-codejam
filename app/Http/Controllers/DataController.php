@@ -275,5 +275,62 @@ class DataController extends Controller
         }
     }
 
+    public function everDisscussed (){
+        $d =  DB::table('mytable')
+                 ->select('mentalHealthEverDiscussedWithEmployer','lessLikelyToRevealIssueInWorkPlaceAfterObservingDiscussion')
+                 ->get();
+
+    
+        $discussed = [
+            "Yes" => 0,
+            "No" => 0,
+        ];
+
+        $k = "Yes";
+        foreach($d as $p){
+            
+            if($p->mentalHealthEverDiscussedWithEmployer == null){
+                $k = "No";
+            }else{
+                $k = "Yes";
+            }
+            
+            $discussed[$k] += 1;
+
+            
+        }
+
+        $wouldDiscuss = [
+            "Yes" => 0,
+            "No" => 0,
+            "Maybe" => 0,
+        ];
+
+        
+
+        $k = "Yes";
+        foreach($d as $x){
+            if($x->mentalHealthEverDiscussedWithEmployer == null  ){
+               if($x->lessLikelyToRevealIssueInWorkPlaceAfterObservingDiscussion == "Yes" ){
+                $k = "No";
+               }else if($x->lessLikelyToRevealIssueInWorkPlaceAfterObservingDiscussion == "No"){
+                $k = "Yes";
+               }else if($x->lessLikelyToRevealIssueInWorkPlaceAfterObservingDiscussion == "Maybe"){
+                $k = "Maybe";
+               }
+               $wouldDiscuss[$k] += 1;
+            }
+            
+
+        }
+
+        
+    
+        return [
+            "HaveDisscussed" => $discussed,
+            "WouldDisscuss" =>$wouldDiscuss
+        ];
+    }
+
 
 }
